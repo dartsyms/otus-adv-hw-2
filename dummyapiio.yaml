@@ -1,0 +1,432 @@
+openapi: 3.0.0
+servers:
+  - description: Fake rest API server with dummy JSON data
+    url: https://dummyapi.io/data/api
+info:
+  description: Sandbox Testing API for playing around with close to real data.
+  version: 1.0.1
+  title: Fake rest API server with dummy JSON data
+  contact:
+    email: dartsyms@gmail.com
+  license:
+    name: The Unlicense
+    url: 'https://unlicense.org/UNLICENSE'
+paths:
+  /user:
+    get:
+      summary: Get users list
+      operationId: UsersCollection
+      description: |
+        Returns a paginated users' list
+      security:
+        - apiKey: []
+      parameters:
+        - description: page number from 0 to 999
+          in: query
+          name: page
+          schema:
+            type: integer
+        - description: items amount limit from 5 to 50
+          in: query
+          name: limit
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK (successfully authenticated)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users'
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /user/{userId}:
+    get:
+      summary: get user's full profile
+      operationId: User
+      description: |
+        User's full profile
+      parameters:
+        - description: A user id
+          in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      security:
+        - apiKey: []
+      responses:
+        '200':
+          description: profile details of the user's with a given id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.  
+  /post:
+    get:
+      summary: Get posts list
+      operationId: PostsCollection
+      description: |
+        Returns a paginated posts list
+      security:
+        - apiKey: []
+      parameters:
+        - description: page number from 0 to 999
+          in: query
+          name: page
+          schema:
+            type: integer
+        - description: items amount limit from 5 to 50
+          in: query
+          name: limit
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK (successfully authenticated)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Posts'
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /post/{postId}:
+    get:
+      summary: get a post with id
+      operationId: Post
+      description: |
+        Post's content with a given id
+      parameters:
+        - description: A post id
+          in: path
+          name: postId
+          required: true
+          schema:
+            type: string
+      security:
+        - apiKey: []
+      responses:
+        '200':
+          description: post with a given id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /post/{userId}/post:
+    get:
+      summary: get posts list for a user with a given id
+      operationId: Posts
+      description: |
+        Posts list created by user with userId
+      parameters:
+        - description: A user id
+          in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+        - description: page number from 0 to 999
+          in: query
+          name: page
+          schema:
+            type: integer
+        - description: items amount limit from 5 to 50
+          in: query
+          name: limit
+          schema:
+            type: integer
+      security:
+        - apiKey: []
+      responses:
+        '200':
+          description: posts list by the user with userId
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Posts'
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /tag/{tagTitle}/post:
+    get:
+      summary: get posts list by tag title
+      operationId: PostsByTag
+      description: |
+        Posts list by tag
+      parameters:
+        - description: tag title
+          in: path
+          name: tagTitle
+          required: true
+          schema:
+            type: string
+        - description: page number from 0 to 999
+          in: query
+          name: page
+          schema:
+            type: integer
+        - description: items amount limit from 5 to 50
+          in: query
+          name: limit
+          schema:
+            type: integer
+      security:
+        - apiKey: []
+      responses:
+        '200':
+          description: posts list by tag title
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Posts'
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /post/{postId}/comment:
+    get:
+      summary: get comments for each post
+      operationId: CommentsCollection
+      description: |
+        Get all comments for a post
+      parameters:
+        - description: A post id
+          in: path
+          name: postId
+          required: true
+          schema:
+            type: string
+        - description: page number from 0 to 999
+          in: query
+          name: page
+          schema:
+            type: integer
+        - description: items amount limit from 5 to 50
+          in: query
+          name: limit
+          schema:
+            type: integer
+      security:
+        - apiKey: []
+      responses:
+        '200':
+          description: comments list for the post with postId
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comments'
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /tag:
+    get:
+      summary: get tags list
+      operationId: TagsCollection
+      description: |
+        All tags
+      parameters:
+        - description: page number from 0 to 999
+          in: query
+          name: page
+          schema:
+            type: integer
+        - description: items amount limit from 5 to 50
+          in: query
+          name: limit
+          schema:
+            type: integer
+      security:
+        - apiKey: []
+      responses:
+        '200':
+          description: all tags
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tags'
+        '400':
+          description: Bad request.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: app-id
+  schemas:
+    Users:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+      description: list of all users
+    Posts:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+      description: list of posts
+    Comments:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+      description: list of comments
+    Tags:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+      description: list of tags
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 5a1097653dc2080021cd8763
+        title:
+          type: string
+          enum:
+            - mr
+            - ms
+            - mrs
+            - miss
+            - dr
+        firstName:
+          type: string
+          example: Albus
+        lastName:
+          type: string
+          example: Dumbledore
+        gender:
+          type: string
+          enum:
+            - male
+            - female
+            - other
+        email:
+          type: string
+          example: someone@somewhere.net
+        location:
+          $ref: '#/components/schemas/Location'
+        dateOfBirth:
+          type: string
+          example: "1/1/1900"
+        registerDate:
+          type: string
+        phone:
+          type: string
+          description: phone number in any format
+        picture:
+          type: string
+          description: image url
+    Post:
+      type: object
+      properties:
+        text:
+          type: string
+        image:
+          type: string
+          description: image url
+        likes:
+          type: number
+          description: amount of likes, initial value 0
+        link:
+          type: string
+          description: url to the post
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+          description: list of tags
+        publishDate:
+          type: string
+        owner:
+          $ref: '#/components/schemas/User'
+    Comment:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 5a1097653dc2080021cd8763
+        message:
+          type: string
+        owner:
+          $ref: '#/components/schemas/User'
+        publishDate:
+            type: string
+    Tag:
+      type: object
+      properties:
+        title:
+          type: string
+    Location:
+      type: object
+      properties:
+        street:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        country:
+          type: string
+        timezone:
+          type: string
+security:
+        - apiKey: []
