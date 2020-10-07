@@ -2,8 +2,6 @@
 //  Network.swift
 //  hwappsecond
 //
-//  Created by sanchez on 22.09.2020.
-//
 
 import Foundation
 import Combine
@@ -26,20 +24,28 @@ extension DefaultAPI {
         }
     }
     
-    class func getUsers(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue) -> Future<Users, Error> {
-        return Future<Users, Error> { promise in
+    class func getUsers(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue) -> Future<[User], Error> {
+        return Future<[User], Error> { promise in
             DefaultAPI.usersCollection(page: page, limit: limit, apiResponseQueue: apiResponseQueue) { usersList, error in
-                guard error == nil, let users = usersList else { return promise(.failure(error!)) }
-                promise(.success(users))
+                guard error == nil else { return promise(.failure(error!)) }
+                if let users = usersList?.data {
+                    promise(.success(users))
+                } else {
+                    promise(.failure(ApiError.unknown("Unexpected nil users value from api")))
+                }
             }
         }
     }
     
-    class func getPosts(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue) -> Future<Posts, Error> {
-        return Future<Posts, Error> { promise in
+    class func getPosts(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue) -> Future<[Post], Error> {
+        return Future<[Post], Error> { promise in
             DefaultAPI.postsCollection(page: page, limit: limit, apiResponseQueue: apiResponseQueue) { postsList, error in
-                guard error == nil, let posts = postsList else { return promise(.failure(error!)) }
-                promise(.success(posts))
+                guard error == nil else { return promise(.failure(error!)) }
+                if let posts = postsList?.data {
+                    promise(.success(posts))
+                } else {
+                    promise(.failure(ApiError.unknown("Unexpected nil users value from api")))
+                }
             }
         }
     }

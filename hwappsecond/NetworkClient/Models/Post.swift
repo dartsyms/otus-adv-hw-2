@@ -19,11 +19,11 @@ public struct Post: Codable {
     /** url to the post */
     public var link: String?
     /** list of tags */
-    public var tags: [Tag]?
+    public var tags: [String]?
     public var publishDate: String?
     public var owner: User?
 
-    public init(text: String?, image: String?, likes: Double?, link: String?, tags: [Tag]?, publishDate: String?, owner: User?) {
+    public init(text: String?, image: String?, likes: Double?, link: String?, tags: [String]?, publishDate: String?, owner: User?) {
         self.text = text
         self.image = image
         self.likes = likes

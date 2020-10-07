@@ -2,14 +2,45 @@
 //  PostsListView.swift
 //  hwappsecond
 //
-//  Created by sanchez on 22.09.2020.
-//
 
 import SwiftUI
 
 struct PostsListView: View {
+    @StateObject var dataSource = PostsDataSource()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+//        CustomNavigationView(transition: .custom(.moveAndFade, .moveBackAndFade)) {
+            VStack {
+                self.posts
+            }
+            .onAppear {
+                self.dataSource.load()
+            }
+//            .onDisappear {
+//                self.dataSource.cancel()
+//            }
+            .navigationBarTitle("Posts", displayMode: .inline)
+        }
+    }
+    
+    private var posts: some View {
+        List {
+            ForEach(Array(self.dataSource.posts.enumerated()), id: \.element.id) { pair in
+                HStack {
+                    PostRowView(viewModel: PostRowViewModel(post: pair.element))
+                }
+                .onAppear {
+                    if self.dataSource.posts.isLast(pair.element) {
+                        self.dataSource.load()
+                    }
+                }
+                
+                if self.dataSource.isLoading && self.dataSource.posts.isLast(pair.element) {
+                    ProgressView()
+                }
+            }
+        }
     }
 }
 

@@ -14,13 +14,13 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            Text("Users List")
+            UsersListView()
                 .tabItem {
                     Image(systemName: (selection == .users ? "person.circle.fill" : "person.circle"))
                     Text("Users")
                 }
                 .tag(Tab.users)
-            Text("Posts List")
+            PostsListView()
                 .tabItem {
                     Image(systemName: (selection == .posts ? "pencil.circle.fill" : "pencil.circle"))
                     Text("Posts")

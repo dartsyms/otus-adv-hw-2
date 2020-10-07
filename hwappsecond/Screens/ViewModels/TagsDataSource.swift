@@ -1,8 +1,6 @@
 //
-//  TagsListViewModel.swift
+//  TagsDataSource.swift
 //  hwappsecond
-//
-//  Created by sanchez on 22.09.2020.
 //
 
 import Foundation
@@ -14,15 +12,19 @@ enum CharcterInRange {
     case fromQtoZ
 }
 
-final class TagsListViewModel: ObservableObject {
-    @Published private(set) var dataSource = [Tag]()
+final class TagsDataSource: ObservableObject {
+    @Published private(set) var tags = [Tag]()
     @Published private(set) var isLoading = false
     @Published private(set) var page: Int = 0
     @Published var switcher: CharcterInRange = .fromAToH {
-        didSet { reload() }
+        didSet {
+            reload()
+        }
     }
     
     var request: AnyCancellable?
+    
+    init() { load() }
     
     func load() {
         guard !isLoading else { return }
@@ -32,7 +34,7 @@ final class TagsListViewModel: ObservableObject {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.request = DefaultAPI.getTags(page: self.page, limit: 10)
+            self.request = DefaultAPI.getTags(page: self.page, limit: 20)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { subscription in
                     print("Subscription: \(subscription.combineIdentifier)")
@@ -56,23 +58,31 @@ final class TagsListViewModel: ObservableObject {
                     }
                     self.isLoading = false
                 }, receiveValue: { list in
-                    print(list)
                     guard !cancelled else { return }
-                    _ = list.compactMap {self.dataSource.append(Tag(title: $0)) }
+                    _ = list
+                        .filter { $0.first != nil ? self.range.contains($0.uppercased().first!) : false }
+                        .compactMap { self.tags.append(Tag(title: $0)) }
+                    self.tags.removeDuplicates()
                     self.page += 1
                 })
         }
     }
     
+    func cancel() {
+        self.request?.cancel()
+        self.tags.removeAll()
+        self.request = nil
+    }
+    
     func reload() {
         self.request?.cancel()
         self.reset()
-        self.dataSource.removeAll()
+        self.tags.removeAll()
         self.load()
     }
     
     private func reset() {
-        self.page = -1
+        self.page = 0
     }
     
     private var range: [Character] {
@@ -85,11 +95,11 @@ final class TagsListViewModel: ObservableObject {
             return rangeToArray("Q"..."Z")
         }
     }
-    
+
     private var searchedSymbols: [Character] {
         return range.map(Character.init)
     }
-    
+
     private func rangeToArray(_ range: ClosedRange<Character>) -> [Character] {
         let unicodeScalarRange: ClosedRange<Character> = range
         let unicodeScalarValueRange = unicodeScalarRange.lowerBound.unicodeScalars[unicodeScalarRange.lowerBound.unicodeScalars.startIndex].value...unicodeScalarRange.upperBound.unicodeScalars[unicodeScalarRange.lowerBound.unicodeScalars.startIndex].value

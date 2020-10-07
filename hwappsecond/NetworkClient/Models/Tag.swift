@@ -16,3 +16,9 @@ public struct Tag: Codable {
     }
 
 }
+
+extension Tag: Equatable {
+    public static func != (lhs: Self, rhs: Self) -> Bool {
+        return lhs.title == rhs.title
+    }
+}
