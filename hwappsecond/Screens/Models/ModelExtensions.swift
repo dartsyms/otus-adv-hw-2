@@ -13,6 +13,8 @@ extension Post: Identifiable {
     }
 }
 
+extension Comment: Identifiable {}
+
 extension Tag: Identifiable {
     public var id: String {
         title ?? UUID().uuidString

@@ -7,7 +7,7 @@
 import Foundation
 
 open class DummyAPI {
-    private static var dummyApiKey = "5f7c307ccb2f583900c2976e"
+    private static var dummyApiKey = "5f7c2dcc582b4b0e578d238d"
     public static var basePath = "https://dummyapi.io/data/api"
     public static var credential: URLCredential?
     public static var customHeaders: [String:String] = ["app-id": DummyAPI.dummyApiKey]

@@ -18,9 +18,6 @@ struct TagsListView: View {
             .onAppear {
                 self.dataSource.load()
             }
-//            .onDisappear {
-//                self.dataSource.cancel()
-//            }
             .navigationBarTitle("Tags", displayMode: .inline)
         }
             
@@ -29,9 +26,9 @@ struct TagsListView: View {
     
     private var switcher: some View {
         Picker(selection: $dataSource.switcher, label: Text("")) {
-            Text("A to H").tag(CharcterInRange.fromAToH)
-            Text("I to P").tag(CharcterInRange.fromItoP)
-            Text("Q to Z").tag(CharcterInRange.fromQtoZ)
+            Text("A to H").tag(CharacterInRange.fromAToH)
+            Text("I to P").tag(CharacterInRange.fromItoP)
+            Text("Q to Z").tag(CharacterInRange.fromQtoZ)
         }
         .pickerStyle(SegmentedPickerStyle())
     }

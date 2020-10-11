@@ -11,9 +11,11 @@ struct TagRowView: View {
         Text(viewModel.tag.title ?? "")
             .lineLimit(1)
             .font(.system(size: 12))
+            .foregroundColor(.white)
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding(7)
-            .background(Capsule().stroke())
+            .background(Capsule().fill(Color(red: 32/255, green: 36/255, blue: 38/255)))
+            .overlay(Capsule().stroke(Color.white, lineWidth: 4))
     }
 }
 

@@ -6,7 +6,7 @@
 import Foundation
 import Combine
 
-enum CharcterInRange {
+enum CharacterInRange {
     case fromAToH
     case fromItoP
     case fromQtoZ
@@ -16,7 +16,7 @@ final class TagsDataSource: ObservableObject {
     @Published private(set) var tags = [Tag]()
     @Published private(set) var isLoading = false
     @Published private(set) var page: Int = 0
-    @Published var switcher: CharcterInRange = .fromAToH {
+    @Published var switcher: CharacterInRange = .fromAToH {
         didSet {
             reload()
         }
@@ -69,12 +69,14 @@ final class TagsDataSource: ObservableObject {
     }
     
     func cancel() {
+        self.isLoading = false
         self.request?.cancel()
         self.tags.removeAll()
         self.request = nil
     }
     
     func reload() {
+        self.isLoading = false
         self.request?.cancel()
         self.reset()
         self.tags.removeAll()
@@ -83,6 +85,7 @@ final class TagsDataSource: ObservableObject {
     
     private func reset() {
         self.page = 0
+        self.isLoading = false
     }
     
     private var range: [Character] {

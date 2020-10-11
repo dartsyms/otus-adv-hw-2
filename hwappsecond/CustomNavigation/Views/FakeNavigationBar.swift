@@ -18,7 +18,7 @@ struct FakeNavigationBar: View {
                         .simultaneousGesture(
                             TapGesture().onEnded { self.viewModel.pop(to: .prev) }
                         )
-                    .padding()
+                        .padding()
                 }
                 Spacer()
             }
@@ -30,7 +30,7 @@ struct FakeNavigationBar: View {
             Text(label)
                 .foregroundColor(.primary)
                 .font(Font.body.weight(.bold))
-                .padding(.top, UIDevice.current.hasNotch ? 40 : 20)
+//                .padding(.top, UIDevice.current.hasNotch ? 40 : 20)
         }
     }
     

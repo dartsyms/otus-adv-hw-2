@@ -12,4 +12,8 @@ final class UserRowViewModel: ObservableObject {
     init(user: User) {
         self.user = user
     }
+    
+    var fullName: String {
+        return "\(user.firstName ?? "John") \(user.lastName ?? "Dough")"
+    }
 }

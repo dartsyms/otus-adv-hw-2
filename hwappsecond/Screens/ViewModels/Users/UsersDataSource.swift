@@ -1,13 +1,13 @@
 //
-//  PostsDataSource.swift
+//  UsersDataSource.swift
 //  hwappsecond
 //
 
 import SwiftUI
 import Combine
 
-final class PostsDataSource: ObservableObject {
-    @Published private(set) var posts = [Post]()
+final class UsersDataSource: ObservableObject {
+    @Published private(set) var users = [User]()
     @Published private(set) var isLoading = false
     @Published private(set) var page: Int = 0
     
@@ -21,12 +21,12 @@ final class PostsDataSource: ObservableObject {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.request = DefaultAPI.getPosts(page: self.page, limit: 20)
+            self.request = DefaultAPI.getUsers(page: self.page, limit: 20)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { subscription in
                     print("Subscription: \(subscription.combineIdentifier)")
-                }, receiveOutput: { posts in
-                    print("Posts: \(posts)")
+                }, receiveOutput: { users in
+                    print("Users \(users)")
                 }, receiveCompletion: { _ in
                     print("Received completion")
                 }, receiveCancel: {
@@ -42,22 +42,31 @@ final class PostsDataSource: ObservableObject {
                         print(error)
                     }
                     self.isLoading = false
-                }, receiveValue: { posts in
-                    var data = [Post]()
-                    print(posts)
-                    _ = posts.compactMap {
-                        let post = Post(text: $0.text, image: $0.image, likes: $0.likes, link: $0.link, tags: $0.tags, publishDate: $0.publishDate, owner: $0.owner)
-                        data.append(post)
+                }, receiveValue: { list in
+                    print(list)
+                    _ = list.compactMap {
+                        let user = User(id: $0.id,
+                                        title: $0.title,
+                                        firstName: $0.firstName,
+                                        lastName: $0.lastName,
+                                        gender: $0.gender,
+                                        email: $0.email,
+                                        location: $0.location,
+                                        dateOfBirth: $0.dateOfBirth,
+                                        registerDate: $0.registerDate,
+                                        phone: $0.phone,
+                                        picture: $0.picture)
+                        self.users.append(user)
                     }
-                    self.posts = data
                     self.page += 1
                 })
         }
     }
     
     func cancel() {
+        self.isLoading = false
         self.request?.cancel()
-        self.posts.removeAll()
+        self.users.removeAll()
         self.request = nil
     }
 }

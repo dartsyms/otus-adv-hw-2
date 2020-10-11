@@ -1,32 +1,37 @@
 //
-//  UsersDataSource.swift
+//  CommentsDataSource.swift
 //  hwappsecond
 //
+
 
 import SwiftUI
 import Combine
 
-final class UsersDataSource: ObservableObject {
-    @Published private(set) var users = [User]()
+final class CommentsDataSource: ObservableObject {
+    @Published private(set) var comments = [Comment]()
     @Published private(set) var isLoading = false
     @Published private(set) var page: Int = 0
     
+    var post: Post
+    
     var request: AnyCancellable?
     
-    init() { load() }
+    init(post: Post) {
+        self.post = post
+    }
     
-    func load() {
+    func loadCommentsFor(_ postId: String) {
         guard !isLoading else { return }
         self.isLoading = true
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.request = DefaultAPI.getUsers(page: self.page, limit: 20)
+            self.request = DefaultAPI.getCommentsForPost(postId: postId, page: self.page, limit: 20)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { subscription in
                     print("Subscription: \(subscription.combineIdentifier)")
-                }, receiveOutput: { users in
-                    print("Users \(users)")
+                }, receiveOutput: { posts in
+                    print("Posts: \(posts)")
                 }, receiveCompletion: { _ in
                     print("Received completion")
                 }, receiveCancel: {
@@ -42,30 +47,23 @@ final class UsersDataSource: ObservableObject {
                         print(error)
                     }
                     self.isLoading = false
-                }, receiveValue: { list in
-                    print(list)
-                    _ = list.compactMap {
-                        let user = User(id: $0.id,
-                                        title: $0.title,
-                                        firstName: $0.firstName,
-                                        lastName: $0.lastName,
-                                        gender: $0.gender,
-                                        email: $0.email,
-                                        location: $0.location,
-                                        dateOfBirth: $0.dateOfBirth,
-                                        registerDate: $0.registerDate,
-                                        phone: $0.phone,
-                                        picture: $0.picture)
-                        self.users.append(user)
+                }, receiveValue: { comments in
+                    var data = [Comment]()
+                    print(comments)
+                    _ = comments.compactMap {
+                        let comment = Comment(id: $0.id, message: $0.message, owner: $0.owner, publishDate: $0.publishDate)
+                        data.append(comment)
                     }
+                    self.comments = data
                     self.page += 1
                 })
         }
     }
     
     func cancel() {
+        self.isLoading = false
         self.request?.cancel()
-        self.users.removeAll()
+        self.comments.removeAll()
         self.request = nil
     }
 }

@@ -59,11 +59,24 @@ extension DefaultAPI {
         }
     }
     
-    class func getCommentsForPost(postId: String, page: Int?, limit: Int?, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue) -> Future<Comments, Error> {
-        return Future<Comments, Error> { promise in
+    class func getPostDetails(postId: String, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue) -> Future<Post, Error> {
+        return Future<Post, Error> { promise in
+            DefaultAPI.post(postId: postId, apiResponseQueue: apiResponseQueue) { user, error in
+                guard error == nil, let user = user else { return promise(.failure(error!)) }
+                promise(.success(user))
+            }
+        }
+    }
+    
+    class func getCommentsForPost(postId: String, page: Int?, limit: Int?, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue) -> Future<[Comment], Error> {
+        return Future<[Comment], Error> { promise in
             DefaultAPI.commentsCollection(postId: postId, page: page, limit: limit, apiResponseQueue: apiResponseQueue) { commentsList, error in
-                guard error == nil, let comments = commentsList else { return promise(.failure(error!)) }
-                promise(.success(comments))
+                guard error == nil else { return promise(.failure(error!)) }
+                if let comments = commentsList?.data {
+                    promise(.success(comments))
+                } else {
+                    promise(.failure(ApiError.unknown("Unexpected nil users value from api")))
+                }
             }
         }
     }

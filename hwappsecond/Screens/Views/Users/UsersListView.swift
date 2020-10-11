@@ -17,10 +17,8 @@ struct UsersListView: View {
             .onAppear {
                 self.dataSource.load()
             }
-//            .onDisappear {
-//                self.dataSource.cancel()
-//            }
             .navigationBarTitle("Users", displayMode: .inline)
+            .edgesIgnoringSafeArea(.all)
         }
     }
     
@@ -40,7 +38,12 @@ struct UsersListView: View {
                     ProgressView()
                 }
             }
+            .listRowInsets( EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10) )
         }
+        .onAppear { UITableView.appearance().separatorStyle = .none }
+//        .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
+        .background(Color.gray)
+        .listStyle(PlainListStyle())
     }
 }
 
