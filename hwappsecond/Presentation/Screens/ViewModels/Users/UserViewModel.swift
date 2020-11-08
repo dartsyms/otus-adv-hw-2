@@ -10,6 +10,9 @@ import CoreLocation
 final class UserViewModel: ObservableObject {
     @Published var user: User?
     @Published var location: CLLocationCoordinate2D?
+    @Injected var geoService: GeoService
+    @Injected var userService: UserService
+    
     private(set) var isLoading = false
     
     var userRequest: AnyCancellable?
@@ -38,7 +41,7 @@ final class UserViewModel: ObservableObject {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.userRequest = DefaultAPI.getUserDetails(userId: id)
+            self.userRequest = self.userService.getUserDetails(userId: id, apiResponseQueue: DummyAPIConfig.apiResponseQueue)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { [weak self] _ in self?.onLoad() },
                     receiveOutput: { print($0) },
@@ -80,7 +83,7 @@ final class UserViewModel: ObservableObject {
               loc.city != nil else { return }
        
         let address = "\(loc.city ?? ""), \(loc.country ?? "")"
-        self.locationRequest = self.getCoordinates(for: address)
+        self.locationRequest = self.geoService.getCoordinates(for: address)
             .subscribe(on: Self.processingQueue)
             .receive(on: DispatchQueue.main)
             .handleEvents(receiveOutput: { print($0) })
@@ -95,30 +98,5 @@ final class UserViewModel: ObservableObject {
             }, receiveValue: { coords in
                 self.location = coords
             })
-    }
-    
-    private func getCoordinates(for address: String) -> Future<CLLocationCoordinate2D, Never> {
-        return Future<CLLocationCoordinate2D, Never> { promise in
-            self.getLocation(from: address) { value in
-                guard value != nil else { return }
-                print(value!)
-                promise(.success(value!))
-            }
-        }
-    }
-    
-    private func getLocation(from address: String, completion: @escaping (_ location: CLLocationCoordinate2D?) -> Void) {
-        let geocoder = CLGeocoder()
-        print("For address: \(address)")
-        geocoder.geocodeAddressString(address) { placemarks, error in
-            guard let placemarks = placemarks,
-            let location = placemarks.first?.location?.coordinate else {
-                print("error geocoding")
-                completion(nil)
-                return
-            }
-            print(location)
-            completion(location)
-        }
     }
 }

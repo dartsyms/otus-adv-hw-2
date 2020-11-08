@@ -7,6 +7,7 @@ import SwiftUI
 import Combine
 
 final class PostsDataSource: ObservableObject {
+    @Injected var postService: PostService
     @Published private(set) var posts = [Post]()
     @Published private(set) var isLoading = false
     @Published private(set) var page: Int = 0
@@ -21,7 +22,7 @@ final class PostsDataSource: ObservableObject {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.request = DefaultAPI.getPosts(page: self.page, limit: 20)
+            self.request = self.postService.getPosts(page: self.page, limit: 20, apiResponseQueue: DummyAPIConfig.apiResponseQueue)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { subscription in
                     print("Subscription: \(subscription.combineIdentifier)")

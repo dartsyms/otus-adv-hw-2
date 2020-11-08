@@ -19,7 +19,7 @@ open class DefaultAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func commentsCollection(postId: String, page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, completion: @escaping ((_ data: Comments?,_ error: Error?) -> Void)) {
+    open class func commentsCollection(postId: String, page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, completion: @escaping ((_ data: Comments?,_ error: Error?) -> Void)) {
         commentsCollectionWithRequestBuilder(postId: postId, page: page, limit: limit).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -44,7 +44,7 @@ open class DefaultAPI {
         let postIdPreEscape = "\(APIHelper.mapValueToPathItem(postId))"
         let postIdPostEscape = postIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{postId}", with: postIdPostEscape, options: .literal, range: nil)
-        let URLString = DummyAPI.basePath + path
+        let URLString = DummyAPIConfig.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -53,7 +53,7 @@ open class DefaultAPI {
             "limit": limit?.encodeToJSON()
         ])
 
-        let requestBuilder: RequestBuilder<Comments>.Type = DummyAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Comments>.Type = DummyAPIConfig.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -65,7 +65,7 @@ open class DefaultAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func post(postId: String, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, completion: @escaping ((_ data: Post?,_ error: Error?) -> Void)) {
+    open class func post(postId: String, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, completion: @escaping ((_ data: Post?,_ error: Error?) -> Void)) {
         postWithRequestBuilder(postId: postId).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -88,12 +88,12 @@ open class DefaultAPI {
         let postIdPreEscape = "\(APIHelper.mapValueToPathItem(postId))"
         let postIdPostEscape = postIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{postId}", with: postIdPostEscape, options: .literal, range: nil)
-        let URLString = DummyAPI.basePath + path
+        let URLString = DummyAPIConfig.basePath + path
         let parameters: [String:Any]? = nil
         
         let url = URLComponents(string: URLString)
 
-        let requestBuilder: RequestBuilder<Post>.Type = DummyAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Post>.Type = DummyAPIConfig.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -107,7 +107,7 @@ open class DefaultAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func posts(userId: String, page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, completion: @escaping ((_ data: Posts?,_ error: Error?) -> Void)) {
+    open class func posts(userId: String, page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, completion: @escaping ((_ data: Posts?,_ error: Error?) -> Void)) {
         postsWithRequestBuilder(userId: userId, page: page, limit: limit).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -132,7 +132,7 @@ open class DefaultAPI {
         let userIdPreEscape = "\(APIHelper.mapValueToPathItem(userId))"
         let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{userId}", with: userIdPostEscape, options: .literal, range: nil)
-        let URLString = DummyAPI.basePath + path
+        let URLString = DummyAPIConfig.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -141,7 +141,7 @@ open class DefaultAPI {
             "limit": limit?.encodeToJSON()
         ])
 
-        let requestBuilder: RequestBuilder<Posts>.Type = DummyAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Posts>.Type = DummyAPIConfig.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -155,7 +155,7 @@ open class DefaultAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func postsByTag(tagTitle: String, page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, completion: @escaping ((_ data: Posts?,_ error: Error?) -> Void)) {
+    open class func postsByTag(tagTitle: String, page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, completion: @escaping ((_ data: Posts?,_ error: Error?) -> Void)) {
         postsByTagWithRequestBuilder(tagTitle: tagTitle, page: page, limit: limit).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -180,7 +180,7 @@ open class DefaultAPI {
         let tagTitlePreEscape = "\(APIHelper.mapValueToPathItem(tagTitle))"
         let tagTitlePostEscape = tagTitlePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{tagTitle}", with: tagTitlePostEscape, options: .literal, range: nil)
-        let URLString = DummyAPI.basePath + path
+        let URLString = DummyAPIConfig.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -189,7 +189,7 @@ open class DefaultAPI {
             "limit": limit?.encodeToJSON()
         ])
 
-        let requestBuilder: RequestBuilder<Posts>.Type = DummyAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Posts>.Type = DummyAPIConfig.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -202,7 +202,7 @@ open class DefaultAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func postsCollection(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, completion: @escaping ((_ data: Posts?,_ error: Error?) -> Void)) {
+    open class func postsCollection(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, completion: @escaping ((_ data: Posts?,_ error: Error?) -> Void)) {
         postsCollectionWithRequestBuilder(page: page, limit: limit).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -223,7 +223,7 @@ open class DefaultAPI {
      */
     open class func postsCollectionWithRequestBuilder(page: Int? = nil, limit: Int? = nil) -> RequestBuilder<Posts> {
         let path = "/post"
-        let URLString = DummyAPI.basePath + path
+        let URLString = DummyAPIConfig.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -232,7 +232,7 @@ open class DefaultAPI {
             "limit": limit?.encodeToJSON()
         ])
 
-        let requestBuilder: RequestBuilder<Posts>.Type = DummyAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Posts>.Type = DummyAPIConfig.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -245,7 +245,7 @@ open class DefaultAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func tagsCollection(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, completion: @escaping ((_ data: Tags?,_ error: Error?) -> Void)) {
+    open class func tagsCollection(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, completion: @escaping ((_ data: Tags?,_ error: Error?) -> Void)) {
         tagsCollectionWithRequestBuilder(page: page, limit: limit).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -266,7 +266,7 @@ open class DefaultAPI {
      */
     open class func tagsCollectionWithRequestBuilder(page: Int? = nil, limit: Int? = nil) -> RequestBuilder<Tags> {
         let path = "/tag"
-        let URLString = DummyAPI.basePath + path
+        let URLString = DummyAPIConfig.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -275,7 +275,7 @@ open class DefaultAPI {
             "limit": limit?.encodeToJSON()
         ])
 
-        let requestBuilder: RequestBuilder<Tags>.Type = DummyAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Tags>.Type = DummyAPIConfig.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -287,7 +287,7 @@ open class DefaultAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func user(userId: String, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, completion: @escaping ((_ data: User?,_ error: Error?) -> Void)) {
+    open class func user(userId: String, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, completion: @escaping ((_ data: User?,_ error: Error?) -> Void)) {
         userWithRequestBuilder(userId: userId).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -310,12 +310,12 @@ open class DefaultAPI {
         let userIdPreEscape = "\(APIHelper.mapValueToPathItem(userId))"
         let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{userId}", with: userIdPostEscape, options: .literal, range: nil)
-        let URLString = DummyAPI.basePath + path
+        let URLString = DummyAPIConfig.basePath + path
         let parameters: [String:Any]? = nil
         
         let url = URLComponents(string: URLString)
 
-        let requestBuilder: RequestBuilder<User>.Type = DummyAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<User>.Type = DummyAPIConfig.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -328,7 +328,7 @@ open class DefaultAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func usersCollection(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, completion: @escaping ((_ data: Users?,_ error: Error?) -> Void)) {
+    open class func usersCollection(page: Int? = nil, limit: Int? = nil, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, completion: @escaping ((_ data: Users?,_ error: Error?) -> Void)) {
         usersCollectionWithRequestBuilder(page: page, limit: limit).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -349,7 +349,7 @@ open class DefaultAPI {
      */
     open class func usersCollectionWithRequestBuilder(page: Int? = nil, limit: Int? = nil) -> RequestBuilder<Users> {
         let path = "/user"
-        let URLString = DummyAPI.basePath + path
+        let URLString = DummyAPIConfig.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -358,7 +358,7 @@ open class DefaultAPI {
             "limit": limit?.encodeToJSON()
         ])
 
-        let requestBuilder: RequestBuilder<Users>.Type = DummyAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Users>.Type = DummyAPIConfig.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }

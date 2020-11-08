@@ -6,16 +6,6 @@
 
 import Foundation
 
-open class DummyAPI {
-    private static var dummyApiKey = "5f7c2dcc582b4b0e578d238d"
-    public static var basePath = "https://dummyapi.io/data/api"
-    public static var credential: URLCredential?
-    public static var customHeaders: [String:String] = ["app-id": DummyAPI.dummyApiKey]
-    public static var requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory()
-    public static var apiResponseQueue: DispatchQueue = .main
-    
-}
-
 open class RequestBuilder<T> {
     var credential: URLCredential?
     var headers: [String:String]
@@ -36,7 +26,7 @@ open class RequestBuilder<T> {
         self.isBody = isBody
         self.headers = headers
         
-        addHeaders(DummyAPI.customHeaders)
+        addHeaders(DummyAPIConfig.customHeaders)
     }
 
     open func addHeaders(_ aHeaders:[String:String]) {
@@ -45,7 +35,7 @@ open class RequestBuilder<T> {
         }
     }
 
-    open func execute(_ apiResponseQueue: DispatchQueue = DummyAPI.apiResponseQueue, _ completion: @escaping (_ result: Swift.Result<Response<T>, Error>) -> Void) { }
+    open func execute(_ apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue, _ completion: @escaping (_ result: Swift.Result<Response<T>, Error>) -> Void) { }
 
     public func addHeader(name: String, value: String) -> Self {
         if !value.isEmpty {
@@ -55,7 +45,7 @@ open class RequestBuilder<T> {
     }
 
     open func addCredential() -> Self {
-        self.credential = DummyAPI.credential
+        self.credential = DummyAPIConfig.credential
         return self
     }
 }

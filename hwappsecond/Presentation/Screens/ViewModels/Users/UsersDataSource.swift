@@ -1,37 +1,33 @@
 //
-//  CommentsDataSource.swift
+//  UsersDataSource.swift
 //  hwappsecond
 //
-
 
 import SwiftUI
 import Combine
 
-final class CommentsDataSource: ObservableObject {
-    @Published private(set) var comments = [Comment]()
+final class UsersDataSource: ObservableObject {
+    @Published private(set) var users = [User]()
     @Published private(set) var isLoading = false
     @Published private(set) var page: Int = 0
-    
-    var post: Post
+    @Injected var userService: UserService
     
     var request: AnyCancellable?
     
-    init(post: Post) {
-        self.post = post
-    }
+    init() { load() }
     
-    func loadCommentsFor(_ postId: String) {
+    func load() {
         guard !isLoading else { return }
         self.isLoading = true
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.request = DefaultAPI.getCommentsForPost(postId: postId, page: self.page, limit: 20)
+            self.request = self.userService.getUsers(page: self.page, limit: 20, apiResponseQueue: DummyAPIConfig.apiResponseQueue)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { subscription in
                     print("Subscription: \(subscription.combineIdentifier)")
-                }, receiveOutput: { posts in
-                    print("Posts: \(posts)")
+                }, receiveOutput: { users in
+                    print("Users \(users)")
                 }, receiveCompletion: { _ in
                     print("Received completion")
                 }, receiveCancel: {
@@ -47,14 +43,22 @@ final class CommentsDataSource: ObservableObject {
                         print(error)
                     }
                     self.isLoading = false
-                }, receiveValue: { comments in
-                    var data = [Comment]()
-                    print(comments)
-                    _ = comments.compactMap {
-                        let comment = Comment(id: $0.id, message: $0.message, owner: $0.owner, publishDate: $0.publishDate)
-                        data.append(comment)
+                }, receiveValue: { list in
+                    print(list)
+                    _ = list.compactMap {
+                        let user = User(id: $0.id,
+                                        title: $0.title,
+                                        firstName: $0.firstName,
+                                        lastName: $0.lastName,
+                                        gender: $0.gender,
+                                        email: $0.email,
+                                        location: $0.location,
+                                        dateOfBirth: $0.dateOfBirth,
+                                        registerDate: $0.registerDate,
+                                        phone: $0.phone,
+                                        picture: $0.picture)
+                        self.users.append(user)
                     }
-                    self.comments = data
                     self.page += 1
                 })
         }
@@ -63,7 +67,7 @@ final class CommentsDataSource: ObservableObject {
     func cancel() {
         self.isLoading = false
         self.request?.cancel()
-        self.comments.removeAll()
+        self.users.removeAll()
         self.request = nil
     }
 }

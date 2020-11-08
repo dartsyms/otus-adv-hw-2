@@ -13,6 +13,7 @@ enum CharacterInRange {
 }
 
 final class TagsDataSource: ObservableObject {
+    @Injected var tagService: TagService
     @Published private(set) var tags = [Tag]()
     @Published private(set) var isLoading = false
     @Published private(set) var page: Int = 0
@@ -34,7 +35,7 @@ final class TagsDataSource: ObservableObject {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.request = DefaultAPI.getTags(page: self.page, limit: 20)
+            self.request = self.tagService.getTags(page: self.page, limit: 20, apiResponseQueue: DummyAPIConfig.apiResponseQueue)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { subscription in
                     print("Subscription: \(subscription.combineIdentifier)")
