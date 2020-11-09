@@ -6,6 +6,7 @@
 
 import SwiftUI
 import CoreLocation
+import DummyApiNetworkClient
 
 struct PostDetailsView: View {
     @State var post: Post

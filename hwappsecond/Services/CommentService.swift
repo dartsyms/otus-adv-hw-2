@@ -5,6 +5,7 @@
 
 import Foundation
 import Combine
+import DummyApiNetworkClient
 
 protocol CommentService {
     func getCommentsForPost(postId: String, page: Int?, limit: Int?, apiResponseQueue: DispatchQueue) -> Future<[Comment], Error>

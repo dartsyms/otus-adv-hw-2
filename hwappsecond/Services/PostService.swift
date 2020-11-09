@@ -5,6 +5,7 @@
 
 import Foundation
 import Combine
+import DummyApiNetworkClient
 
 protocol PostService {
     func getPosts(page: Int?, limit: Int?, apiResponseQueue: DispatchQueue) -> Future<[Post], Error>
@@ -26,7 +27,7 @@ final class PostServiceImpl: PostService {
         }
     }
     
-    func getPostDetails(postId: String, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue) -> Future<Post, Error> {
+    func getPostDetails(postId: String, apiResponseQueue: DispatchQueue) -> Future<Post, Error> {
         return Future<Post, Error> { promise in
             DefaultAPI.post(postId: postId, apiResponseQueue: apiResponseQueue) { user, error in
                 guard error == nil, let user = user else { return promise(.failure(error!)) }

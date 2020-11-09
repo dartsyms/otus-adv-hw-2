@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import DummyApiNetworkClient
 
 struct UserRowView: View {
     @ObservedObject var viewModel: UserRowViewModel

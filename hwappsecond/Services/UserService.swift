@@ -5,6 +5,7 @@
 
 import Foundation
 import Combine
+import DummyApiNetworkClient
 
 protocol UserService {
     func getUsers(page: Int?, limit: Int?, apiResponseQueue: DispatchQueue) -> Future<[User], Error>
@@ -26,7 +27,7 @@ final class UserServiceImpl: UserService {
         }
     }
     
-    func getUserDetails(userId: String, apiResponseQueue: DispatchQueue = DummyAPIConfig.apiResponseQueue) -> Future<User, Error> {
+    func getUserDetails(userId: String, apiResponseQueue: DispatchQueue) -> Future<User, Error> {
         return Future<User, Error> { promise in
             DefaultAPI.user(userId: userId, apiResponseQueue: apiResponseQueue) { user, error in
                 guard error == nil, let user = user else { return promise(.failure(error!)) }

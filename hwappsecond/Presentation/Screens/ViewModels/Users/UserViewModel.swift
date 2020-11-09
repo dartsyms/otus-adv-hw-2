@@ -6,6 +6,7 @@
 import SwiftUI
 import Combine
 import CoreLocation
+import DummyApiNetworkClient
 
 final class UserViewModel: ObservableObject {
     @Published var user: User?

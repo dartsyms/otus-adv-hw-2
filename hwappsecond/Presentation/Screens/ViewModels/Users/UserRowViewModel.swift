@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import DummyApiNetworkClient
 
 
 final class UserRowViewModel: ObservableObject {

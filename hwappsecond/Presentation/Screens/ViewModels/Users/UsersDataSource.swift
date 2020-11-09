@@ -5,6 +5,7 @@
 
 import SwiftUI
 import Combine
+import DummyApiNetworkClient
 
 final class UsersDataSource: ObservableObject {
     @Published private(set) var users = [User]()

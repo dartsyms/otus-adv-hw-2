@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import DummyApiNetworkClient
 
 final class TagRowViewModel: ObservableObject {
     @Published private(set) var tag: Tag

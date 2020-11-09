@@ -60,3 +60,7 @@ struct Injected<T> {
         mutating set { self = newValue }
     }
 }
+
+public enum ApiError: Error {
+    case unknown(String)
+}

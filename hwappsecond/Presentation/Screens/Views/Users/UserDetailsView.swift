@@ -5,6 +5,7 @@
 
 import SwiftUI
 import CoreLocation
+import DummyApiNetworkClient
 
 struct UserDetailsView: View {
     @ObservedObject private var viewModel = UserViewModel()

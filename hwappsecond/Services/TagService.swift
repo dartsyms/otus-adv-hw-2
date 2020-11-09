@@ -5,6 +5,7 @@
 
 import Foundation
 import Combine
+import DummyApiNetworkClient
 
 protocol TagService {
     func getTags(page: Int?, limit: Int?, apiResponseQueue: DispatchQueue) -> Future<[String], Error>

@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import DummyApiNetworkClient
 
 struct TagRowView: View {
     @ObservedObject var viewModel: TagRowViewModel

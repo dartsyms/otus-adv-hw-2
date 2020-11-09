@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import DummyApiNetworkClient
 
 struct CommentsListView: View {
     @ObservedObject var dataSource: CommentsDataSource

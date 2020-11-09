@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import DummyApiNetworkClient
 
 final class PostRowViewModel: ObservableObject {
     @Published private(set) var post: Post

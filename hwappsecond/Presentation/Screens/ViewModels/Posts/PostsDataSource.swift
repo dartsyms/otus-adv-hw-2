@@ -5,6 +5,7 @@
 
 import SwiftUI
 import Combine
+import DummyApiNetworkClient
 
 final class PostsDataSource: ObservableObject {
     @Injected var postService: PostService

@@ -5,8 +5,8 @@
         "package": "DummyApiNetworkClient",
         "repositoryURL": "https://github.com/dartsyms/DummyApiNetworkClient.git",
         "state": {
-          "branch": "main",
-          "revision": "c6eefe8ddbd3a4892d0134991e61458da87979bd",
+          "branch": null,
+          "revision": "ee61ece229265ddd480d745cf9d5fe623838b0bf",
           "version": null
         }
       }

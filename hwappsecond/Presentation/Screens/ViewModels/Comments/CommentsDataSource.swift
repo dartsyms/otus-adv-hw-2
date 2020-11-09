@@ -5,6 +5,7 @@
 
 import SwiftUI
 import Combine
+import DummyApiNetworkClient
 
 final class CommentsDataSource: ObservableObject {
     @Injected var commentService: CommentService
