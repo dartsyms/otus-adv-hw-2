@@ -5,6 +5,7 @@
 
 import SwiftUI
 import DummyApiNetworkClient
+import CustomNavigation
 
 struct PostRowView: View {
     @ObservedObject var viewModel: PostRowViewModel

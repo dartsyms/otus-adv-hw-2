@@ -29,17 +29,13 @@
 		19FC6D8925589E5F00FAA4D2 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC6D8825589E5F00FAA4D2 /* CommentService.swift */; };
 		19FC6D912558B5E200FAA4D2 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC6D902558B5E200FAA4D2 /* DIContainer.swift */; };
 		19FC6DA52558C0FF00FAA4D2 /* DummyApiNetworkClient in Frameworks */ = {isa = PBXBuildFile; productRef = 19FC6DA42558C0FF00FAA4D2 /* DummyApiNetworkClient */; };
+		19FC6DCC2558D27300FAA4D2 /* CustomNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 19FC6DCB2558D27300FAA4D2 /* CustomNavigation */; };
 		19FF6DCB2518754E000FB80A /* hwappsecondApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6DCA2518754E000FB80A /* hwappsecondApp.swift */; };
 		19FF6DCD2518754E000FB80A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6DCC2518754E000FB80A /* MainView.swift */; };
 		19FF6DCF2518754E000FB80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19FF6DCE2518754E000FB80A /* Assets.xcassets */; };
 		19FF6DD22518754E000FB80A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19FF6DD12518754E000FB80A /* Preview Assets.xcassets */; };
 		19FF6E392519F605000FB80A /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E382519F605000FB80A /* Appearance.swift */; };
 		19FF6E3D2519F6F8000FB80A /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E3C2519F6F8000FB80A /* Collections.swift */; };
-		19FF6E422519F997000FB80A /* NavPushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E412519F997000FB80A /* NavPushButton.swift */; };
-		19FF6E462519FC6B000FB80A /* NavPopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E452519FC6B000FB80A /* NavPopButton.swift */; };
-		19FF6E492519FD52000FB80A /* CustomNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E482519FD52000FB80A /* CustomNavigationViewModel.swift */; };
-		19FF6E4C251A0514000FB80A /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E4B251A0514000FB80A /* CustomNavigationView.swift */; };
-		19FF6E4F251A0CCE000FB80A /* FakeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E4E251A0CCE000FB80A /* FakeNavigationBar.swift */; };
 		19FF6E55251A1E2E000FB80A /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E54251A1E2E000FB80A /* UsersListView.swift */; };
 		19FF6E58251A1E3C000FB80A /* PostsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E57251A1E3C000FB80A /* PostsListView.swift */; };
 		19FF6E5B251A1E50000FB80A /* TagsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E5A251A1E50000FB80A /* TagsListView.swift */; };
@@ -83,11 +79,6 @@
 		19FF6DD32518754E000FB80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19FF6E382519F605000FB80A /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		19FF6E3C2519F6F8000FB80A /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
-		19FF6E412519F997000FB80A /* NavPushButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPushButton.swift; sourceTree = "<group>"; };
-		19FF6E452519FC6B000FB80A /* NavPopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPopButton.swift; sourceTree = "<group>"; };
-		19FF6E482519FD52000FB80A /* CustomNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewModel.swift; sourceTree = "<group>"; };
-		19FF6E4B251A0514000FB80A /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
-		19FF6E4E251A0CCE000FB80A /* FakeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNavigationBar.swift; sourceTree = "<group>"; };
 		19FF6E54251A1E2E000FB80A /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		19FF6E57251A1E3C000FB80A /* PostsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListView.swift; sourceTree = "<group>"; };
 		19FF6E5A251A1E50000FB80A /* TagsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListView.swift; sourceTree = "<group>"; };
@@ -107,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19FC6DA52558C0FF00FAA4D2 /* DummyApiNetworkClient in Frameworks */,
+				19FC6DCC2558D27300FAA4D2 /* CustomNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +209,6 @@
 		19FC6D7425588EA000FAA4D2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				19FF6E332518FB04000FB80A /* CustomNavigation */,
 				19FF6E312518FAF0000FB80A /* Screens */,
 			);
 			path = Presentation;
@@ -311,15 +302,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		19FF6E332518FB04000FB80A /* CustomNavigation */ = {
-			isa = PBXGroup;
-			children = (
-				19FF6E402519F953000FB80A /* ViewModels */,
-				19FF6E3F2519F94C000FB80A /* Views */,
-			);
-			path = CustomNavigation;
-			sourceTree = "<group>";
-		};
 		19FF6E342518FB1F000FB80A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,25 +335,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		19FF6E3F2519F94C000FB80A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				19FF6E4B251A0514000FB80A /* CustomNavigationView.swift */,
-				19FF6E4E251A0CCE000FB80A /* FakeNavigationBar.swift */,
-				19FF6E452519FC6B000FB80A /* NavPopButton.swift */,
-				19FF6E412519F997000FB80A /* NavPushButton.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		19FF6E402519F953000FB80A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				19FF6E482519FD52000FB80A /* CustomNavigationViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,6 +353,7 @@
 			name = hwappsecond;
 			packageProductDependencies = (
 				19FC6DA42558C0FF00FAA4D2 /* DummyApiNetworkClient */,
+				19FC6DCB2558D27300FAA4D2 /* CustomNavigation */,
 			);
 			productName = hwappsecond;
 			productReference = 19FF6DC72518754E000FB80A /* hwappsecond.app */;
@@ -420,6 +384,7 @@
 			mainGroup = 19FF6DBE2518754E000FB80A;
 			packageReferences = (
 				19FC6DA32558C0FF00FAA4D2 /* XCRemoteSwiftPackageReference "DummyApiNetworkClient" */,
+				19FC6DCA2558D27300FAA4D2 /* XCRemoteSwiftPackageReference "CustomNavigation" */,
 			);
 			productRefGroup = 19FF6DC82518754E000FB80A /* Products */;
 			projectDirPath = "";
@@ -452,7 +417,6 @@
 				19A25100252BBE66006E6F66 /* ModelExtensions.swift in Sources */,
 				19FC6D912558B5E200FAA4D2 /* DIContainer.swift in Sources */,
 				19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */,
-				19FF6E492519FD52000FB80A /* CustomNavigationViewModel.swift in Sources */,
 				19A2511325332D9D006E6F66 /* TemporaryImageCache.swift in Sources */,
 				19FF6E5E251A1E74000FB80A /* UserRowView.swift in Sources */,
 				19FC6D7A255891AE00FAA4D2 /* ServiceLocator.swift in Sources */,
@@ -464,23 +428,19 @@
 				19FF6E64251A1E97000FB80A /* TagRowView.swift in Sources */,
 				19A251272533AB4D006E6F66 /* CommentsRowView.swift in Sources */,
 				19FF6DCD2518754E000FB80A /* MainView.swift in Sources */,
-				19FF6E4F251A0CCE000FB80A /* FakeNavigationBar.swift in Sources */,
 				19A251172533753B006E6F66 /* UserViewModel.swift in Sources */,
 				19FF6E6A251A1EEC000FB80A /* CommentsListView.swift in Sources */,
 				19FF6DCB2518754E000FB80A /* hwappsecondApp.swift in Sources */,
 				19FF6E6D251A1F25000FB80A /* UsersDataSource.swift in Sources */,
-				19FF6E4C251A0514000FB80A /* CustomNavigationView.swift in Sources */,
 				19A2510F253325D2006E6F66 /* AsyncImage.swift in Sources */,
 				19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */,
 				19A2512E2533B2A8006E6F66 /* PostDetailsView.swift in Sources */,
 				19FF6E67251A1EB5000FB80A /* UserDetailsView.swift in Sources */,
-				19FF6E422519F997000FB80A /* NavPushButton.swift in Sources */,
 				19A2512A2533ABA7006E6F66 /* CommentRowViewModel.swift in Sources */,
 				19FF6E5B251A1E50000FB80A /* TagsListView.swift in Sources */,
 				19FF6E392519F605000FB80A /* Appearance.swift in Sources */,
 				19FC6D8925589E5F00FAA4D2 /* CommentService.swift in Sources */,
 				19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */,
-				19FF6E462519FC6B000FB80A /* NavPopButton.swift in Sources */,
 				19FC6D802558965A00FAA4D2 /* PostService.swift in Sources */,
 				19FF6E61251A1E88000FB80A /* PostRowView.swift in Sources */,
 				19FC6D862558970C00FAA4D2 /* GeoService.swift in Sources */,
@@ -686,6 +646,14 @@
 				revision = ee61ece229265ddd480d745cf9d5fe623838b0bf;
 			};
 		};
+		19FC6DCA2558D27300FAA4D2 /* XCRemoteSwiftPackageReference "CustomNavigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dartsyms/CustomNavigation.git";
+			requirement = {
+				kind = revision;
+				revision = 15ab786ca0320e0a487450a6b1e72381972b5f57;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -693,6 +661,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 19FC6DA32558C0FF00FAA4D2 /* XCRemoteSwiftPackageReference "DummyApiNetworkClient" */;
 			productName = DummyApiNetworkClient;
+		};
+		19FC6DCB2558D27300FAA4D2 /* CustomNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19FC6DCA2558D27300FAA4D2 /* XCRemoteSwiftPackageReference "CustomNavigation" */;
+			productName = CustomNavigation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

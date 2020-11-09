@@ -7,6 +7,7 @@
 import SwiftUI
 import CoreLocation
 import DummyApiNetworkClient
+import CustomNavigation
 
 struct PostDetailsView: View {
     @State var post: Post
@@ -14,7 +15,7 @@ struct PostDetailsView: View {
     var body: some View {
         let url = URL(string: post.image ?? "https://img.dummyapi.io/photo-1590178534645-de019aa7255e.jpg")!
         VStack {
-            FakeNavigationBar(label: self.author)
+            FakeNavigationBar(self.author)
             
             AsyncImage(url: url, placeholder: { Image(systemName: "photo")}, image: { Image(uiImage: $0).resizable() })
                 .scaledToFit()

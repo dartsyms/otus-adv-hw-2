@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import CustomNavigation
 
 struct PostsListView: View {
     var body: some View {

@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "CustomNavigation",
+        "repositoryURL": "https://github.com/dartsyms/CustomNavigation.git",
+        "state": {
+          "branch": null,
+          "revision": "15ab786ca0320e0a487450a6b1e72381972b5f57",
+          "version": null
+        }
+      },
+      {
         "package": "DummyApiNetworkClient",
         "repositoryURL": "https://github.com/dartsyms/DummyApiNetworkClient.git",
         "state": {
