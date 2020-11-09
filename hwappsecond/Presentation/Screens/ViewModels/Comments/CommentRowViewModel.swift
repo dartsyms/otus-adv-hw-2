@@ -2,8 +2,6 @@
 //  CommentRowViewModel.swift
 //  hwappsecond
 //
-//  Created by sanchez on 12.10.2020.
-//
 
 import Foundation
 import DummyApiNetworkClient
