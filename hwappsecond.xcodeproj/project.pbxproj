@@ -12,7 +12,6 @@
 		19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */; };
 		19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */; };
 		19A25100252BBE66006E6F66 /* ModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250FF252BBE66006E6F66 /* ModelExtensions.swift */; };
-		19A2511325332D9D006E6F66 /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2511225332D9D006E6F66 /* TemporaryImageCache.swift */; };
 		19A251172533753B006E6F66 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A251162533753B006E6F66 /* UserViewModel.swift */; };
 		19A2511A25338EEE006E6F66 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2511925338EEE006E6F66 /* CircleImage.swift */; };
 		19A2511D25338F38006E6F66 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2511C25338F38006E6F66 /* MapView.swift */; };
@@ -52,7 +51,6 @@
 		19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowViewModel.swift; sourceTree = "<group>"; };
 		19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
 		19A250FF252BBE66006E6F66 /* ModelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExtensions.swift; sourceTree = "<group>"; };
-		19A2511225332D9D006E6F66 /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
 		19A251162533753B006E6F66 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		19A2511925338EEE006E6F66 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		19A2511C25338F38006E6F66 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -101,14 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19A2511125332D65006E6F66 /* ImageCache */ = {
-			isa = PBXGroup;
-			children = (
-				19A2511225332D9D006E6F66 /* TemporaryImageCache.swift */,
-			);
-			path = ImageCache;
-			sourceTree = "<group>";
-		};
 		19A251322533C7E2006E6F66 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +241,6 @@
 		19FF6DC92518754E000FB80A /* hwappsecond */ = {
 			isa = PBXGroup;
 			children = (
-				19A2511125332D65006E6F66 /* ImageCache */,
 				19FF6E322518FAFA000FB80A /* Extensions */,
 				19FC6D7425588EA000FAA4D2 /* Presentation */,
 				19FF6DD02518754E000FB80A /* Preview Content */,
@@ -403,7 +392,6 @@
 				19A25100252BBE66006E6F66 /* ModelExtensions.swift in Sources */,
 				19FC6D912558B5E200FAA4D2 /* DIContainer.swift in Sources */,
 				19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */,
-				19A2511325332D9D006E6F66 /* TemporaryImageCache.swift in Sources */,
 				19FF6E5E251A1E74000FB80A /* UserRowView.swift in Sources */,
 				19FC6D7A255891AE00FAA4D2 /* ServiceLocator.swift in Sources */,
 				19A2511A25338EEE006E6F66 /* CircleImage.swift in Sources */,
