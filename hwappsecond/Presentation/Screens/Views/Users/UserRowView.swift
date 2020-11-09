@@ -5,6 +5,7 @@
 
 import SwiftUI
 import DummyApiNetworkClient
+import AsyncImageLoader
 
 struct UserRowView: View {
     @ObservedObject var viewModel: UserRowViewModel

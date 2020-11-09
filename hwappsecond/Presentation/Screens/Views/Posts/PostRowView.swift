@@ -6,6 +6,7 @@
 import SwiftUI
 import DummyApiNetworkClient
 import CustomNavigation
+import AsyncImageLoader
 
 struct PostRowView: View {
     @ObservedObject var viewModel: PostRowViewModel

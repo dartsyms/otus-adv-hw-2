@@ -8,6 +8,7 @@ import SwiftUI
 import CoreLocation
 import DummyApiNetworkClient
 import CustomNavigation
+import AsyncImageLoader
 
 struct PostDetailsView: View {
     @State var post: Post

@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AsyncImageLoader",
+        "repositoryURL": "https://github.com/dartsyms/AsyncImageLoader.git",
+        "state": {
+          "branch": "main",
+          "revision": "5b9bcba8556df789e3f658d5e0b732f529914bf2",
+          "version": null
+        }
+      },
+      {
         "package": "CustomNavigation",
         "repositoryURL": "https://github.com/dartsyms/CustomNavigation.git",
         "state": {

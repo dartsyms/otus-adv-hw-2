@@ -7,6 +7,7 @@ import SwiftUI
 import CoreLocation
 import DummyApiNetworkClient
 import CustomNavigation
+import AsyncImageLoader
 
 struct UserDetailsView: View {
     @ObservedObject private var viewModel = UserViewModel()

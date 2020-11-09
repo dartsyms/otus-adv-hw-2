@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import AsyncImageLoader
 
 struct CommentRowView: View {
     @ObservedObject var viewModel: CommentRowViewModel
