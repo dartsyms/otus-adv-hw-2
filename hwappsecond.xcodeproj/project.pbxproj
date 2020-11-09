@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		19FC6D8925589E5F00FAA4D2 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC6D8825589E5F00FAA4D2 /* CommentService.swift */; };
 		19FC6D912558B5E200FAA4D2 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC6D902558B5E200FAA4D2 /* DIContainer.swift */; };
 		19FC6D942558B72100FAA4D2 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC6D932558B72100FAA4D2 /* APIConfig.swift */; };
+		19FC6D9D2558BE7000FAA4D2 /* DummyApiNetworkClient in Frameworks */ = {isa = PBXBuildFile; productRef = 19FC6D9C2558BE7000FAA4D2 /* DummyApiNetworkClient */; };
 		19FF6DCB2518754E000FB80A /* hwappsecondApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6DCA2518754E000FB80A /* hwappsecondApp.swift */; };
 		19FF6DCD2518754E000FB80A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6DCC2518754E000FB80A /* MainView.swift */; };
 		19FF6DCF2518754E000FB80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19FF6DCE2518754E000FB80A /* Assets.xcassets */; };
@@ -149,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19FC6D9D2558BE7000FAA4D2 /* DummyApiNetworkClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +486,9 @@
 			dependencies = (
 			);
 			name = hwappsecond;
+			packageProductDependencies = (
+				19FC6D9C2558BE7000FAA4D2 /* DummyApiNetworkClient */,
+			);
 			productName = hwappsecond;
 			productReference = 19FF6DC72518754E000FB80A /* hwappsecond.app */;
 			productType = "com.apple.product-type.application";
@@ -511,6 +516,9 @@
 				Base,
 			);
 			mainGroup = 19FF6DBE2518754E000FB80A;
+			packageReferences = (
+				19FC6D9B2558BE7000FAA4D2 /* XCRemoteSwiftPackageReference "DummyApiNetworkClient" */,
+			);
 			productRefGroup = 19FF6DC82518754E000FB80A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -788,6 +796,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		19FC6D9B2558BE7000FAA4D2 /* XCRemoteSwiftPackageReference "DummyApiNetworkClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dartsyms/DummyApiNetworkClient.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		19FC6D9C2558BE7000FAA4D2 /* DummyApiNetworkClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19FC6D9B2558BE7000FAA4D2 /* XCRemoteSwiftPackageReference "DummyApiNetworkClient" */;
+			productName = DummyApiNetworkClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 19FF6DBF2518754E000FB80A /* Project object */;
 }

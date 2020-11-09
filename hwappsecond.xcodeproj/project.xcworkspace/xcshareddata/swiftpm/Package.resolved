@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DummyApiNetworkClient",
+        "repositoryURL": "https://github.com/dartsyms/DummyApiNetworkClient.git",
+        "state": {
+          "branch": "main",
+          "revision": "c6eefe8ddbd3a4892d0134991e61458da87979bd",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
