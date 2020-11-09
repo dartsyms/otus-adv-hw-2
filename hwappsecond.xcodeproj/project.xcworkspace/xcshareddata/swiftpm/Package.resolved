@@ -14,8 +14,8 @@
         "package": "CustomNavigation",
         "repositoryURL": "https://github.com/dartsyms/CustomNavigation.git",
         "state": {
-          "branch": null,
-          "revision": "15ab786ca0320e0a487450a6b1e72381972b5f57",
+          "branch": "main",
+          "revision": "969160761705ee5cd1a38e99b57e75c2f4f55630",
           "version": null
         }
       },
@@ -23,8 +23,8 @@
         "package": "DummyApiNetworkClient",
         "repositoryURL": "https://github.com/dartsyms/DummyApiNetworkClient.git",
         "state": {
-          "branch": null,
-          "revision": "ee61ece229265ddd480d745cf9d5fe623838b0bf",
+          "branch": "main",
+          "revision": "1ed93ae26ce1af6b16d53762c1a9fd72df033ae8",
           "version": null
         }
       }

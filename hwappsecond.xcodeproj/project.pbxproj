@@ -622,16 +622,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dartsyms/DummyApiNetworkClient.git";
 			requirement = {
-				kind = revision;
-				revision = ee61ece229265ddd480d745cf9d5fe623838b0bf;
+				branch = main;
+				kind = branch;
 			};
 		};
 		19FC6DCA2558D27300FAA4D2 /* XCRemoteSwiftPackageReference "CustomNavigation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dartsyms/CustomNavigation.git";
 			requirement = {
-				kind = revision;
-				revision = 15ab786ca0320e0a487450a6b1e72381972b5f57;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
