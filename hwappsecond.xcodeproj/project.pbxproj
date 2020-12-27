@@ -26,6 +26,19 @@
 		199C41F72598F2A60088CB26 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41DF2598EE180088CB26 /* PersistanceController.swift */; };
 		199C41FA2598F2A90088CB26 /* CustomPersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41D92598EDA30088CB26 /* CustomPersistenceContainer.swift */; };
 		199C42062598FF570088CB26 /* ShareHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C42052598FF570088CB26 /* ShareHistory.swift */; };
+		199C420B25991E360088CB26 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C420A25991E360088CB26 /* Job.swift */; };
+		199C421125991EAA0088CB26 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C421025991EAA0088CB26 /* JobQueue.swift */; };
+		199C4215259922300088CB26 /* JobScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C4214259922300088CB26 /* JobScheduler.swift */; };
+		199C42192599289B0088CB26 /* ArrayManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C42182599289B0088CB26 /* ArrayManipulator.swift */; };
+		199C421D259928CD0088CB26 /* DictionaryManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C421C259928CD0088CB26 /* DictionaryManipulator.swift */; };
+		199C4222259929260088CB26 /* SetManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C4221259929260088CB26 /* SetManipulator.swift */; };
+		199C42282599299B0088CB26 /* SuffixesManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C42272599299B0088CB26 /* SuffixesManipulator.swift */; };
+		199C423325992AC00088CB26 /* Profiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C423225992AC00088CB26 /* Profiler.swift */; };
+		199C423925992B540088CB26 /* SwiftArrayManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C423825992B540088CB26 /* SwiftArrayManipulator.swift */; };
+		199C423D25992C590088CB26 /* SwiftDictionaryManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C423C25992C590088CB26 /* SwiftDictionaryManipulator.swift */; };
+		199C424125992CD00088CB26 /* SwiftSetManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C424025992CD00088CB26 /* SwiftSetManipulator.swift */; };
+		199C424525992D0E0088CB26 /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C424425992D0E0088CB26 /* StringGenerator.swift */; };
+		199C424925992D7D0088CB26 /* SwiftSuffixesManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C424825992D7D0088CB26 /* SwiftSuffixesManipulator.swift */; };
 		19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */; };
 		19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */; };
 		19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */; };
@@ -107,6 +120,19 @@
 		199C41DF2598EE180088CB26 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
 		199C41E42598EE440088CB26 /* hwappsecond.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hwappsecond.xcdatamodel; sourceTree = "<group>"; };
 		199C42052598FF570088CB26 /* ShareHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareHistory.swift; sourceTree = "<group>"; };
+		199C420A25991E360088CB26 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		199C421025991EAA0088CB26 /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
+		199C4214259922300088CB26 /* JobScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobScheduler.swift; sourceTree = "<group>"; };
+		199C42182599289B0088CB26 /* ArrayManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayManipulator.swift; sourceTree = "<group>"; };
+		199C421C259928CD0088CB26 /* DictionaryManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryManipulator.swift; sourceTree = "<group>"; };
+		199C4221259929260088CB26 /* SetManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetManipulator.swift; sourceTree = "<group>"; };
+		199C42272599299B0088CB26 /* SuffixesManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixesManipulator.swift; sourceTree = "<group>"; };
+		199C423225992AC00088CB26 /* Profiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiler.swift; sourceTree = "<group>"; };
+		199C423825992B540088CB26 /* SwiftArrayManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArrayManipulator.swift; sourceTree = "<group>"; };
+		199C423C25992C590088CB26 /* SwiftDictionaryManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDictionaryManipulator.swift; sourceTree = "<group>"; };
+		199C424025992CD00088CB26 /* SwiftSetManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSetManipulator.swift; sourceTree = "<group>"; };
+		199C424425992D0E0088CB26 /* StringGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringGenerator.swift; sourceTree = "<group>"; };
+		199C424825992D7D0088CB26 /* SwiftSuffixesManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSuffixesManipulator.swift; sourceTree = "<group>"; };
 		19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRowViewModel.swift; sourceTree = "<group>"; };
 		19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowViewModel.swift; sourceTree = "<group>"; };
 		19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
@@ -198,8 +224,12 @@
 		199C413D2597C9B20088CB26 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				199C413E2597C9C80088CB26 /* SuffixIterator.swift */,
-				199C41422597C9F20088CB26 /* SuffixSequence.swift */,
+				199C423125992AB10088CB26 /* Utils */,
+				199C423025992A770088CB26 /* Set */,
+				199C422F25992A6D0088CB26 /* Array */,
+				199C422E25992A5E0088CB26 /* Dictionary */,
+				199C422B25992A4F0088CB26 /* Suffixes */,
+				199C4220259928EE0088CB26 /* Protocols */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -220,6 +250,70 @@
 				199C42052598FF570088CB26 /* ShareHistory.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		199C420925991E240088CB26 /* Schedulers */ = {
+			isa = PBXGroup;
+			children = (
+				199C420A25991E360088CB26 /* Job.swift */,
+				199C421025991EAA0088CB26 /* JobQueue.swift */,
+				199C4214259922300088CB26 /* JobScheduler.swift */,
+			);
+			path = Schedulers;
+			sourceTree = "<group>";
+		};
+		199C4220259928EE0088CB26 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				199C42182599289B0088CB26 /* ArrayManipulator.swift */,
+				199C421C259928CD0088CB26 /* DictionaryManipulator.swift */,
+				199C4221259929260088CB26 /* SetManipulator.swift */,
+				199C42272599299B0088CB26 /* SuffixesManipulator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		199C422B25992A4F0088CB26 /* Suffixes */ = {
+			isa = PBXGroup;
+			children = (
+				199C413E2597C9C80088CB26 /* SuffixIterator.swift */,
+				199C41422597C9F20088CB26 /* SuffixSequence.swift */,
+				199C424825992D7D0088CB26 /* SwiftSuffixesManipulator.swift */,
+			);
+			path = Suffixes;
+			sourceTree = "<group>";
+		};
+		199C422E25992A5E0088CB26 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				199C423C25992C590088CB26 /* SwiftDictionaryManipulator.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		199C422F25992A6D0088CB26 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				199C423825992B540088CB26 /* SwiftArrayManipulator.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		199C423025992A770088CB26 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				199C424025992CD00088CB26 /* SwiftSetManipulator.swift */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
+		199C423125992AB10088CB26 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				199C423225992AC00088CB26 /* Profiler.swift */,
+				199C424425992D0E0088CB26 /* StringGenerator.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		19A251322533C7E2006E6F66 /* Posts */ = {
@@ -367,6 +461,7 @@
 		19FF6DC92518754E000FB80A /* hwappsecond */ = {
 			isa = PBXGroup;
 			children = (
+				199C420925991E240088CB26 /* Schedulers */,
 				199C41D82598ED890088CB26 /* CoreDataStack */,
 				199C413D2597C9B20088CB26 /* DataStructures */,
 				199C412D2597BA350088CB26 /* hwappsecond.entitlements */,
@@ -567,13 +662,18 @@
 				19A25100252BBE66006E6F66 /* ModelExtensions.swift in Sources */,
 				19FC6D912558B5E200FAA4D2 /* DIContainer.swift in Sources */,
 				19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */,
+				199C424125992CD00088CB26 /* SwiftSetManipulator.swift in Sources */,
+				199C420B25991E360088CB26 /* Job.swift in Sources */,
 				199C413F2597C9C80088CB26 /* SuffixIterator.swift in Sources */,
 				199C414B2597DBD80088CB26 /* SuffixesListView.swift in Sources */,
+				199C424925992D7D0088CB26 /* SwiftSuffixesManipulator.swift in Sources */,
 				19FF6E5E251A1E74000FB80A /* UserRowView.swift in Sources */,
 				19FC6D7A255891AE00FAA4D2 /* ServiceLocator.swift in Sources */,
 				19A2511A25338EEE006E6F66 /* CircleImage.swift in Sources */,
+				199C421D259928CD0088CB26 /* DictionaryManipulator.swift in Sources */,
 				199C414F2597DFE80088CB26 /* SuffixRowView.swift in Sources */,
 				19FC6D7D2558964600FAA4D2 /* TagService.swift in Sources */,
+				199C42192599289B0088CB26 /* ArrayManipulator.swift in Sources */,
 				19A2511D25338F38006E6F66 /* MapView.swift in Sources */,
 				19FF6E73251A1F62000FB80A /* TagsDataSource.swift in Sources */,
 				19FF6E55251A1E2E000FB80A /* UsersListView.swift in Sources */,
@@ -581,12 +681,15 @@
 				19A251272533AB4D006E6F66 /* CommentsRowView.swift in Sources */,
 				19FF6DCD2518754E000FB80A /* MainView.swift in Sources */,
 				19A251172533753B006E6F66 /* UserViewModel.swift in Sources */,
+				199C424525992D0E0088CB26 /* StringGenerator.swift in Sources */,
 				19FF6E6A251A1EEC000FB80A /* CommentsListView.swift in Sources */,
 				19FF6DCB2518754E000FB80A /* hwappsecondApp.swift in Sources */,
 				199C41472597CA8F0088CB26 /* SuffixesDataSource.swift in Sources */,
+				199C423D25992C590088CB26 /* SwiftDictionaryManipulator.swift in Sources */,
 				199C415B2597E7DC0088CB26 /* CustomSearchView.swift in Sources */,
 				19FF6E6D251A1F25000FB80A /* UsersDataSource.swift in Sources */,
 				19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */,
+				199C423925992B540088CB26 /* SwiftArrayManipulator.swift in Sources */,
 				19A2512E2533B2A8006E6F66 /* PostDetailsView.swift in Sources */,
 				199C415F2597E82F0088CB26 /* UIExtensions.swift in Sources */,
 				19FF6E67251A1EB5000FB80A /* UserDetailsView.swift in Sources */,
@@ -595,15 +698,20 @@
 				19FF6E5B251A1E50000FB80A /* TagsListView.swift in Sources */,
 				19FC6D8925589E5F00FAA4D2 /* CommentService.swift in Sources */,
 				19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */,
+				199C42282599299B0088CB26 /* SuffixesManipulator.swift in Sources */,
 				19FC6D802558965A00FAA4D2 /* PostService.swift in Sources */,
 				19FF6E61251A1E88000FB80A /* PostRowView.swift in Sources */,
 				19FC6D862558970C00FAA4D2 /* GeoService.swift in Sources */,
 				19FF6E70251A1F3E000FB80A /* PostsDataSource.swift in Sources */,
+				199C4215259922300088CB26 /* JobScheduler.swift in Sources */,
+				199C421125991EAA0088CB26 /* JobQueue.swift in Sources */,
 				199C41532597E0290088CB26 /* SuffixRowViewModel.swift in Sources */,
 				19FC6D832558966600FAA4D2 /* UserService.swift in Sources */,
 				199C41DA2598EDA30088CB26 /* CustomPersistenceContainer.swift in Sources */,
 				19FF6E58251A1E3C000FB80A /* PostsListView.swift in Sources */,
+				199C4222259929260088CB26 /* SetManipulator.swift in Sources */,
 				199C41E52598EE440088CB26 /* hwappsecond.xcdatamodeld in Sources */,
+				199C423325992AC00088CB26 /* Profiler.swift in Sources */,
 				19FF6E3D2519F6F8000FB80A /* Collections.swift in Sources */,
 				199C42062598FF570088CB26 /* ShareHistory.swift in Sources */,
 				199C41E02598EE180088CB26 /* PersistanceController.swift in Sources */,
