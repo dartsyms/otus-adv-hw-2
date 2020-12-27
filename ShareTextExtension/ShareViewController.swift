@@ -6,9 +6,33 @@
 import UIKit
 import Social
 import Combine
+import CoreData
 
 class ShareViewController: SLComposeServiceViewController {
-
+    // MARK: - CoreData stack
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = CustomPersistentContainer(name: "hwappsecond")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    // MARK: - Share Extension stuff
     override func isContentValid() -> Bool {
         return true
     }
@@ -17,8 +41,14 @@ class ShareViewController: SLComposeServiceViewController {
         guard let text = textView.text,
               let defaults = UserDefaults(suiteName: ShareConstants.group),
               let url = URL(string: ShareConstants.scheme) else { return }
-        
         defaults.set(text, forKey: "copied_text")
+        
+        let item = Item(context: persistentContainer.viewContext)
+        item.id = UUID()
+        item.content = text
+        item.timestamp = Date()
+        saveContext()
+        
         openURL(url)
         
         dismiss(animated: false) {

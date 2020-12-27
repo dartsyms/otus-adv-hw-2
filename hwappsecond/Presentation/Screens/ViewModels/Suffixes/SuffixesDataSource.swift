@@ -5,6 +5,7 @@
 
 import Foundation
 import Combine
+import CoreData
 
 typealias IncomingData = [String]
 typealias Suffixes = [String: Int]
@@ -21,6 +22,7 @@ enum PickerState {
 final class SuffixesDataSource: ObservableObject {
     @Published var suffixes: Suffixes = [String: Int]()
     @Published var tops = [(String, Int)]()
+    @Published var sorts = [(String, Int)]()
     @Published var term: String = String()
     @Published var switcher: PickerState = .all {
         didSet {
@@ -127,10 +129,11 @@ final class SuffixesDataSource: ObservableObject {
         let sorted = type == .asc
             ? suffixes.sorted { lhs, rhs in lhs.key < rhs.key }
             : suffixes.sorted { lhs, rhs in lhs.key > rhs.key }
-        suffixes.removeAll()
-        for item in sorted {
-            suffixes[item.key] = item.value
-        }
+//        suffixes.removeAll()
+//        for item in sorted {
+//            suffixes[item.key] = item.value
+//        }
+        sorts = Array(sorted)
         return suffixes
     }
     

@@ -19,6 +19,13 @@
 		199C41532597E0290088CB26 /* SuffixRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41522597E0290088CB26 /* SuffixRowViewModel.swift */; };
 		199C415B2597E7DC0088CB26 /* CustomSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C415A2597E7DC0088CB26 /* CustomSearchView.swift */; };
 		199C415F2597E82F0088CB26 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C415E2597E82F0088CB26 /* UIExtensions.swift */; };
+		199C41DA2598EDA30088CB26 /* CustomPersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41D92598EDA30088CB26 /* CustomPersistenceContainer.swift */; };
+		199C41E02598EE180088CB26 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41DF2598EE180088CB26 /* PersistanceController.swift */; };
+		199C41E52598EE440088CB26 /* hwappsecond.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 199C41E32598EE440088CB26 /* hwappsecond.xcdatamodeld */; };
+		199C41F42598F2A00088CB26 /* hwappsecond.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 199C41E32598EE440088CB26 /* hwappsecond.xcdatamodeld */; };
+		199C41F72598F2A60088CB26 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41DF2598EE180088CB26 /* PersistanceController.swift */; };
+		199C41FA2598F2A90088CB26 /* CustomPersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41D92598EDA30088CB26 /* CustomPersistenceContainer.swift */; };
+		199C42062598FF570088CB26 /* ShareHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C42052598FF570088CB26 /* ShareHistory.swift */; };
 		19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */; };
 		19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */; };
 		19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */; };
@@ -96,6 +103,10 @@
 		199C41522597E0290088CB26 /* SuffixRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixRowViewModel.swift; sourceTree = "<group>"; };
 		199C415A2597E7DC0088CB26 /* CustomSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchView.swift; sourceTree = "<group>"; };
 		199C415E2597E82F0088CB26 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		199C41D92598EDA30088CB26 /* CustomPersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPersistenceContainer.swift; sourceTree = "<group>"; };
+		199C41DF2598EE180088CB26 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
+		199C41E42598EE440088CB26 /* hwappsecond.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hwappsecond.xcdatamodel; sourceTree = "<group>"; };
+		199C42052598FF570088CB26 /* ShareHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareHistory.swift; sourceTree = "<group>"; };
 		19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRowViewModel.swift; sourceTree = "<group>"; };
 		19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowViewModel.swift; sourceTree = "<group>"; };
 		19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
@@ -191,6 +202,24 @@
 				199C41422597C9F20088CB26 /* SuffixSequence.swift */,
 			);
 			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		199C41D82598ED890088CB26 /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				199C41D92598EDA30088CB26 /* CustomPersistenceContainer.swift */,
+				199C41DF2598EE180088CB26 /* PersistanceController.swift */,
+				199C41E32598EE440088CB26 /* hwappsecond.xcdatamodeld */,
+			);
+			path = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		199C42042598FF3A0088CB26 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				199C42052598FF570088CB26 /* ShareHistory.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		19A251322533C7E2006E6F66 /* Posts */ = {
@@ -338,6 +367,7 @@
 		19FF6DC92518754E000FB80A /* hwappsecond */ = {
 			isa = PBXGroup;
 			children = (
+				199C41D82598ED890088CB26 /* CoreDataStack */,
 				199C413D2597C9B20088CB26 /* DataStructures */,
 				199C412D2597BA350088CB26 /* hwappsecond.entitlements */,
 				19FF6E322518FAFA000FB80A /* Extensions */,
@@ -380,6 +410,7 @@
 		19FF6E342518FB1F000FB80A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				199C42042598FF3A0088CB26 /* History */,
 				19FF6DCC2518754E000FB80A /* MainView.swift */,
 				199C41352597BED00088CB26 /* Suffixes */,
 				19A2513B2533C84B006E6F66 /* CustomViews */,
@@ -521,7 +552,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199C41FA2598F2A90088CB26 /* CustomPersistenceContainer.swift in Sources */,
+				199C41F42598F2A00088CB26 /* hwappsecond.xcdatamodeld in Sources */,
 				195B86F4256D42FE00069E25 /* ShareViewController.swift in Sources */,
+				199C41F72598F2A60088CB26 /* PersistanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,8 +601,12 @@
 				19FF6E70251A1F3E000FB80A /* PostsDataSource.swift in Sources */,
 				199C41532597E0290088CB26 /* SuffixRowViewModel.swift in Sources */,
 				19FC6D832558966600FAA4D2 /* UserService.swift in Sources */,
+				199C41DA2598EDA30088CB26 /* CustomPersistenceContainer.swift in Sources */,
 				19FF6E58251A1E3C000FB80A /* PostsListView.swift in Sources */,
+				199C41E52598EE440088CB26 /* hwappsecond.xcdatamodeld in Sources */,
 				19FF6E3D2519F6F8000FB80A /* Collections.swift in Sources */,
+				199C42062598FF570088CB26 /* ShareHistory.swift in Sources */,
+				199C41E02598EE180088CB26 /* PersistanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +916,19 @@
 			productName = CustomNavigation;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		199C41E32598EE440088CB26 /* hwappsecond.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				199C41E42598EE440088CB26 /* hwappsecond.xcdatamodel */,
+			);
+			currentVersion = 199C41E42598EE440088CB26 /* hwappsecond.xcdatamodel */;
+			path = hwappsecond.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 19FF6DBF2518754E000FB80A /* Project object */;
 }

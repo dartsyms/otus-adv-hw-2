@@ -4,10 +4,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct SuffixesListView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var dataSource: SuffixesDataSource
     @ObservedObject var dataUpdater: ShareDataUpdate
+    
+    @FetchRequest(entity: Item.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)]) var sharedItems: FetchedResults<Item>
     
     @State private var searchStr: String = ""
     
@@ -43,10 +47,8 @@ struct SuffixesListView: View {
     }
     
     private func updateSourceData() {
-        if let defaults = UserDefaults(suiteName: "group.ru.it.kot.hwappsecond"),
-           let res = defaults.string(forKey: "copied_text") {
-            dataSource.updateSource(data: res)
-        }
+        let sorted = sharedItems.sorted { $0.timestamp! > $1.timestamp! }.first
+        dataSource.updateSource(data: sorted?.content ?? "")
     }
     
     private var search: some View {
@@ -65,9 +67,14 @@ struct SuffixesListView: View {
     }
     
     private var sortingChanger: some View {
-        Toggle(isOn: Binding<Bool>(get: { dataSource.sortToggle == .asc && dataSource.switcher == .all },
-                                   set: { turnedOn in dataSource.sortToggle = turnedOn && dataSource.switcher == .all ? .asc : .desc})) {
-            Text("\(dataSource.sortToggle == .asc ? "ASC" : "DESC")").padding(.horizontal, 20) }
+        Toggle(isOn: Binding<Bool>(
+                get: {
+                    dataSource.sortToggle == .asc && dataSource.switcher == .all
+                },
+                set: { turnedOn in
+                    dataSource.sortToggle = turnedOn && dataSource.switcher == .all ? .asc : .desc
+                    
+                })) { Text("\(dataSource.sortToggle == .asc ? "ASC" : "DESC")").padding(.horizontal, 20) }
     }
     
     private var switcher: some View {
@@ -127,5 +134,6 @@ struct SuffixesListView: View {
 struct SuffixesListView_Previews: PreviewProvider {
     static var previews: some View {
         SuffixesListView(dataSource: SuffixesDataSource(source: "sssss"), dataUpdater: ShareDataUpdate())
+            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }
