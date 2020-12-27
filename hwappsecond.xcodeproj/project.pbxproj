@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		193460792559382500567674 /* AsyncImageLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 193460782559382500567674 /* AsyncImageLoader */; };
+		195B86F4256D42FE00069E25 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B86F3256D42FE00069E25 /* ShareViewController.swift */; };
+		195B86F7256D42FE00069E25 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 195B86F5256D42FE00069E25 /* MainInterface.storyboard */; };
+		195B86FB256D42FE00069E25 /* ShareTextExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 195B86F1256D42FE00069E25 /* ShareTextExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		199C413F2597C9C80088CB26 /* SuffixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C413E2597C9C80088CB26 /* SuffixIterator.swift */; };
+		199C41432597C9F20088CB26 /* SuffixSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41422597C9F20088CB26 /* SuffixSequence.swift */; };
+		199C41472597CA8F0088CB26 /* SuffixesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41462597CA8F0088CB26 /* SuffixesDataSource.swift */; };
+		199C414B2597DBD80088CB26 /* SuffixesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C414A2597DBD80088CB26 /* SuffixesListView.swift */; };
+		199C414F2597DFE80088CB26 /* SuffixRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C414E2597DFE80088CB26 /* SuffixRowView.swift */; };
+		199C41532597E0290088CB26 /* SuffixRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C41522597E0290088CB26 /* SuffixRowViewModel.swift */; };
+		199C415B2597E7DC0088CB26 /* CustomSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C415A2597E7DC0088CB26 /* CustomSearchView.swift */; };
+		199C415F2597E82F0088CB26 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C415E2597E82F0088CB26 /* UIExtensions.swift */; };
 		19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */; };
 		19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */; };
 		19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */; };
@@ -46,7 +57,45 @@
 		19FF6E73251A1F62000FB80A /* TagsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF6E72251A1F62000FB80A /* TagsDataSource.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		195B86F9256D42FE00069E25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19FF6DBF2518754E000FB80A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 195B86F0256D42FE00069E25;
+			remoteInfo = ShareTextExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		195B86FC256D42FE00069E25 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				195B86FB256D42FE00069E25 /* ShareTextExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		195B86F1256D42FE00069E25 /* ShareTextExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareTextExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		195B86F3256D42FE00069E25 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		195B86F6256D42FE00069E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		195B86F8256D42FE00069E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		199C412D2597BA350088CB26 /* hwappsecond.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hwappsecond.entitlements; sourceTree = "<group>"; };
+		199C412E2597BA5A0088CB26 /* ShareTextExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareTextExtension.entitlements; sourceTree = "<group>"; };
+		199C413E2597C9C80088CB26 /* SuffixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixIterator.swift; sourceTree = "<group>"; };
+		199C41422597C9F20088CB26 /* SuffixSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixSequence.swift; sourceTree = "<group>"; };
+		199C41462597CA8F0088CB26 /* SuffixesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixesDataSource.swift; sourceTree = "<group>"; };
+		199C414A2597DBD80088CB26 /* SuffixesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixesListView.swift; sourceTree = "<group>"; };
+		199C414E2597DFE80088CB26 /* SuffixRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixRowView.swift; sourceTree = "<group>"; };
+		199C41522597E0290088CB26 /* SuffixRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixRowViewModel.swift; sourceTree = "<group>"; };
+		199C415A2597E7DC0088CB26 /* CustomSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchView.swift; sourceTree = "<group>"; };
+		199C415E2597E82F0088CB26 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRowViewModel.swift; sourceTree = "<group>"; };
 		19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowViewModel.swift; sourceTree = "<group>"; };
 		19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +135,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		195B86EE256D42FE00069E25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19FF6DC42518754E000FB80A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +155,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		195B86F2256D42FE00069E25 /* ShareTextExtension */ = {
+			isa = PBXGroup;
+			children = (
+				199C412E2597BA5A0088CB26 /* ShareTextExtension.entitlements */,
+				195B86F3256D42FE00069E25 /* ShareViewController.swift */,
+				195B86F5256D42FE00069E25 /* MainInterface.storyboard */,
+				195B86F8256D42FE00069E25 /* Info.plist */,
+			);
+			path = ShareTextExtension;
+			sourceTree = "<group>";
+		};
+		199C41352597BED00088CB26 /* Suffixes */ = {
+			isa = PBXGroup;
+			children = (
+				199C414A2597DBD80088CB26 /* SuffixesListView.swift */,
+				199C414E2597DFE80088CB26 /* SuffixRowView.swift */,
+			);
+			path = Suffixes;
+			sourceTree = "<group>";
+		};
+		199C41362597BEE50088CB26 /* Suffixes */ = {
+			isa = PBXGroup;
+			children = (
+				199C41462597CA8F0088CB26 /* SuffixesDataSource.swift */,
+				199C41522597E0290088CB26 /* SuffixRowViewModel.swift */,
+			);
+			path = Suffixes;
+			sourceTree = "<group>";
+		};
+		199C413D2597C9B20088CB26 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				199C413E2597C9C80088CB26 /* SuffixIterator.swift */,
+				199C41422597C9F20088CB26 /* SuffixSequence.swift */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
 		19A251322533C7E2006E6F66 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +235,7 @@
 			children = (
 				19A2511925338EEE006E6F66 /* CircleImage.swift */,
 				19A2511C25338F38006E6F66 /* MapView.swift */,
+				199C415A2597E7DC0088CB26 /* CustomSearchView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -226,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				19FF6DC92518754E000FB80A /* hwappsecond */,
+				195B86F2256D42FE00069E25 /* ShareTextExtension */,
 				19FF6DC82518754E000FB80A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -234,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				19FF6DC72518754E000FB80A /* hwappsecond.app */,
+				195B86F1256D42FE00069E25 /* ShareTextExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +338,8 @@
 		19FF6DC92518754E000FB80A /* hwappsecond */ = {
 			isa = PBXGroup;
 			children = (
+				199C413D2597C9B20088CB26 /* DataStructures */,
+				199C412D2597BA350088CB26 /* hwappsecond.entitlements */,
 				19FF6E322518FAFA000FB80A /* Extensions */,
 				19FC6D7425588EA000FAA4D2 /* Presentation */,
 				19FF6DD02518754E000FB80A /* Preview Content */,
@@ -273,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				19FF6E3C2519F6F8000FB80A /* Collections.swift */,
+				199C415E2597E82F0088CB26 /* UIExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				19FF6DCC2518754E000FB80A /* MainView.swift */,
+				199C41352597BED00088CB26 /* Suffixes */,
 				19A2513B2533C84B006E6F66 /* CustomViews */,
 				19A2513D2533C85B006E6F66 /* Comments */,
 				19A2513F2533C86E006E6F66 /* Posts */,
@@ -293,6 +394,7 @@
 		19FF6E352518FB2B000FB80A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				199C41362597BEE50088CB26 /* Suffixes */,
 				19A251322533C7E2006E6F66 /* Posts */,
 				19A251342533C7F0006E6F66 /* Tags */,
 				19A251352533C7FE006E6F66 /* Users */,
@@ -312,6 +414,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		195B86F0256D42FE00069E25 /* ShareTextExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 195B86FF256D42FE00069E25 /* Build configuration list for PBXNativeTarget "ShareTextExtension" */;
+			buildPhases = (
+				195B86ED256D42FE00069E25 /* Sources */,
+				195B86EE256D42FE00069E25 /* Frameworks */,
+				195B86EF256D42FE00069E25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareTextExtension;
+			productName = ShareTextExtension;
+			productReference = 195B86F1256D42FE00069E25 /* ShareTextExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		19FF6DC62518754E000FB80A /* hwappsecond */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19FF6DD62518754E000FB80A /* Build configuration list for PBXNativeTarget "hwappsecond" */;
@@ -319,10 +438,12 @@
 				19FF6DC32518754E000FB80A /* Sources */,
 				19FF6DC42518754E000FB80A /* Frameworks */,
 				19FF6DC52518754E000FB80A /* Resources */,
+				195B86FC256D42FE00069E25 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				195B86FA256D42FE00069E25 /* PBXTargetDependency */,
 			);
 			name = hwappsecond;
 			packageProductDependencies = (
@@ -340,9 +461,12 @@
 		19FF6DBF2518754E000FB80A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					195B86F0256D42FE00069E25 = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					19FF6DC62518754E000FB80A = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -367,11 +491,20 @@
 			projectRoot = "";
 			targets = (
 				19FF6DC62518754E000FB80A /* hwappsecond */,
+				195B86F0256D42FE00069E25 /* ShareTextExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		195B86EF256D42FE00069E25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195B86F7256D42FE00069E25 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19FF6DC52518754E000FB80A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,6 +517,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		195B86ED256D42FE00069E25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195B86F4256D42FE00069E25 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19FF6DC32518754E000FB80A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,9 +533,12 @@
 				19A25100252BBE66006E6F66 /* ModelExtensions.swift in Sources */,
 				19FC6D912558B5E200FAA4D2 /* DIContainer.swift in Sources */,
 				19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */,
+				199C413F2597C9C80088CB26 /* SuffixIterator.swift in Sources */,
+				199C414B2597DBD80088CB26 /* SuffixesListView.swift in Sources */,
 				19FF6E5E251A1E74000FB80A /* UserRowView.swift in Sources */,
 				19FC6D7A255891AE00FAA4D2 /* ServiceLocator.swift in Sources */,
 				19A2511A25338EEE006E6F66 /* CircleImage.swift in Sources */,
+				199C414F2597DFE80088CB26 /* SuffixRowView.swift in Sources */,
 				19FC6D7D2558964600FAA4D2 /* TagService.swift in Sources */,
 				19A2511D25338F38006E6F66 /* MapView.swift in Sources */,
 				19FF6E73251A1F62000FB80A /* TagsDataSource.swift in Sources */,
@@ -405,11 +549,15 @@
 				19A251172533753B006E6F66 /* UserViewModel.swift in Sources */,
 				19FF6E6A251A1EEC000FB80A /* CommentsListView.swift in Sources */,
 				19FF6DCB2518754E000FB80A /* hwappsecondApp.swift in Sources */,
+				199C41472597CA8F0088CB26 /* SuffixesDataSource.swift in Sources */,
+				199C415B2597E7DC0088CB26 /* CustomSearchView.swift in Sources */,
 				19FF6E6D251A1F25000FB80A /* UsersDataSource.swift in Sources */,
 				19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */,
 				19A2512E2533B2A8006E6F66 /* PostDetailsView.swift in Sources */,
+				199C415F2597E82F0088CB26 /* UIExtensions.swift in Sources */,
 				19FF6E67251A1EB5000FB80A /* UserDetailsView.swift in Sources */,
 				19A2512A2533ABA7006E6F66 /* CommentRowViewModel.swift in Sources */,
+				199C41432597C9F20088CB26 /* SuffixSequence.swift in Sources */,
 				19FF6E5B251A1E50000FB80A /* TagsListView.swift in Sources */,
 				19FC6D8925589E5F00FAA4D2 /* CommentService.swift in Sources */,
 				19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */,
@@ -417,6 +565,7 @@
 				19FF6E61251A1E88000FB80A /* PostRowView.swift in Sources */,
 				19FC6D862558970C00FAA4D2 /* GeoService.swift in Sources */,
 				19FF6E70251A1F3E000FB80A /* PostsDataSource.swift in Sources */,
+				199C41532597E0290088CB26 /* SuffixRowViewModel.swift in Sources */,
 				19FC6D832558966600FAA4D2 /* UserService.swift in Sources */,
 				19FF6E58251A1E3C000FB80A /* PostsListView.swift in Sources */,
 				19FF6E3D2519F6F8000FB80A /* Collections.swift in Sources */,
@@ -425,7 +574,70 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		195B86FA256D42FE00069E25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 195B86F0256D42FE00069E25 /* ShareTextExtension */;
+			targetProxy = 195B86F9256D42FE00069E25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		195B86F5256D42FE00069E25 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				195B86F6256D42FE00069E25 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		195B86FD256D42FE00069E25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareTextExtension/ShareTextExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VAGZXD78P;
+				INFOPLIST_FILE = ShareTextExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.it.kot.hwappsecond.ShareTextExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		195B86FE256D42FE00069E25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareTextExtension/ShareTextExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VAGZXD78P;
+				INFOPLIST_FILE = ShareTextExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.it.kot.hwappsecond.ShareTextExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		19FF6DD42518754E000FB80A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -545,8 +757,10 @@
 		19FF6DD72518754E000FB80A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hwappsecond/hwappsecond.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"hwappsecond/Preview Content\"";
 				DEVELOPMENT_TEAM = 7VAGZXD78P;
@@ -567,8 +781,10 @@
 		19FF6DD82518754E000FB80A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hwappsecond/hwappsecond.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"hwappsecond/Preview Content\"";
 				DEVELOPMENT_TEAM = 7VAGZXD78P;
@@ -589,6 +805,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		195B86FF256D42FE00069E25 /* Build configuration list for PBXNativeTarget "ShareTextExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				195B86FD256D42FE00069E25 /* Debug */,
+				195B86FE256D42FE00069E25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		19FF6DC22518754E000FB80A /* Build configuration list for PBXProject "hwappsecond" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
