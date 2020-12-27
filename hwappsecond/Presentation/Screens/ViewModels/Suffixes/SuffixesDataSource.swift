@@ -8,6 +8,7 @@ import Combine
 
 typealias IncomingData = [String]
 typealias Suffixes = [String: Int]
+typealias SuffixPair = (String, Int)
 
 public enum SortingType {
     case asc, desc
@@ -97,7 +98,8 @@ final class SuffixesDataSource: ObservableObject {
             }).store(in: &cancellables)
     }
     
-    private func populate() {
+    @discardableResult
+    private func populate() -> Suffixes {
         suffixes.removeAll()
         source.forEach {
             let sequence = SuffixSequence(str: $0)
@@ -105,18 +107,22 @@ final class SuffixesDataSource: ObservableObject {
                 suffixes[String(suffix)] = (suffixes[String(suffix)] ?? 0) + 1
             }
         }
+        return suffixes
     }
     
-    func getTop(of topCount: Int, charCount: Int) {
+    @discardableResult
+    func getTop(of topCount: Int, charCount: Int) -> [SuffixPair] {
         populate()
         let sorted = suffixes
             .sorted(by: { first, second in first.value > second.value })
             .filter({ key, value in key.count == charCount })
             .prefix(topCount)
         tops = Array(sorted)
+        return tops
     }
     
-    func sortByKeys(type: SortingType) {
+    @discardableResult
+    func sortByKeys(type: SortingType) -> Suffixes {
         populate()
         let sorted = type == .asc
             ? suffixes.sorted { lhs, rhs in lhs.key < rhs.key }
@@ -125,15 +131,18 @@ final class SuffixesDataSource: ObservableObject {
         for item in sorted {
             suffixes[item.key] = item.value
         }
+        return suffixes
     }
     
-    func sortByValues() {
+    @discardableResult
+    func sortByValues() -> Suffixes {
         suffixes.removeAll()
         populate()
         let sorted = suffixes.sorted { $0.value > $1.value }
         for item in sorted {
             suffixes[item.key] = item.value
         }
+        return suffixes
     }
 }
 
