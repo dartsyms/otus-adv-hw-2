@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		193460792559382500567674 /* AsyncImageLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 193460782559382500567674 /* AsyncImageLoader */; };
+		1953B976259BFA90005E343E /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1953B975259BFA90005E343E /* HistoryViewModel.swift */; };
+		1953B97C259BFF26005E343E /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1953B97B259BFF26005E343E /* Formatters.swift */; };
 		195B86F4256D42FE00069E25 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B86F3256D42FE00069E25 /* ShareViewController.swift */; };
 		195B86F7256D42FE00069E25 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 195B86F5256D42FE00069E25 /* MainInterface.storyboard */; };
 		195B86FB256D42FE00069E25 /* ShareTextExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 195B86F1256D42FE00069E25 /* ShareTextExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -102,6 +104,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1953B975259BFA90005E343E /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		1953B97B259BFF26005E343E /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		195B86F1256D42FE00069E25 /* ShareTextExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareTextExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		195B86F3256D42FE00069E25 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		195B86F6256D42FE00069E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -192,6 +196,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1953B974259BFA71005E343E /* History */ = {
+			isa = PBXGroup;
+			children = (
+				1953B975259BFA90005E343E /* HistoryViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		195B86F2256D42FE00069E25 /* ShareTextExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +448,7 @@
 			children = (
 				19FF6DCA2518754E000FB80A /* hwappsecondApp.swift */,
 				19FC6D902558B5E200FAA4D2 /* DIContainer.swift */,
+				199C412D2597BA350088CB26 /* hwappsecond.entitlements */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -461,13 +474,12 @@
 		19FF6DC92518754E000FB80A /* hwappsecond */ = {
 			isa = PBXGroup;
 			children = (
-				199C420925991E240088CB26 /* Schedulers */,
 				199C41D82598ED890088CB26 /* CoreDataStack */,
 				199C413D2597C9B20088CB26 /* DataStructures */,
-				199C412D2597BA350088CB26 /* hwappsecond.entitlements */,
 				19FF6E322518FAFA000FB80A /* Extensions */,
 				19FC6D7425588EA000FAA4D2 /* Presentation */,
 				19FF6DD02518754E000FB80A /* Preview Content */,
+				199C420925991E240088CB26 /* Schedulers */,
 				19FC6D7825588F0700FAA4D2 /* Services */,
 				19FC6D8B2558A47B00FAA4D2 /* SupportingFiles */,
 				19FC6D8E2558A51A00FAA4D2 /* System */,
@@ -498,6 +510,7 @@
 			children = (
 				19FF6E3C2519F6F8000FB80A /* Collections.swift */,
 				199C415E2597E82F0088CB26 /* UIExtensions.swift */,
+				1953B97B259BFF26005E343E /* Formatters.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +533,7 @@
 		19FF6E352518FB2B000FB80A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1953B974259BFA71005E343E /* History */,
 				199C41362597BEE50088CB26 /* Suffixes */,
 				19A251322533C7E2006E6F66 /* Posts */,
 				19A251342533C7F0006E6F66 /* Tags */,
@@ -665,6 +679,7 @@
 				199C424125992CD00088CB26 /* SwiftSetManipulator.swift in Sources */,
 				199C420B25991E360088CB26 /* Job.swift in Sources */,
 				199C413F2597C9C80088CB26 /* SuffixIterator.swift in Sources */,
+				1953B976259BFA90005E343E /* HistoryViewModel.swift in Sources */,
 				199C414B2597DBD80088CB26 /* SuffixesListView.swift in Sources */,
 				199C424925992D7D0088CB26 /* SwiftSuffixesManipulator.swift in Sources */,
 				19FF6E5E251A1E74000FB80A /* UserRowView.swift in Sources */,
@@ -701,6 +716,7 @@
 				199C42282599299B0088CB26 /* SuffixesManipulator.swift in Sources */,
 				19FC6D802558965A00FAA4D2 /* PostService.swift in Sources */,
 				19FF6E61251A1E88000FB80A /* PostRowView.swift in Sources */,
+				1953B97C259BFF26005E343E /* Formatters.swift in Sources */,
 				19FC6D862558970C00FAA4D2 /* GeoService.swift in Sources */,
 				19FF6E70251A1F3E000FB80A /* PostsDataSource.swift in Sources */,
 				199C4215259922300088CB26 /* JobScheduler.swift in Sources */,
@@ -906,7 +922,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = hwappsecond/hwappsecond.entitlements;
+				CODE_SIGN_ENTITLEMENTS = hwappsecond/System/hwappsecond.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"hwappsecond/Preview Content\"";
 				DEVELOPMENT_TEAM = 7VAGZXD78P;
@@ -930,7 +946,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = hwappsecond/hwappsecond.entitlements;
+				CODE_SIGN_ENTITLEMENTS = hwappsecond/System/hwappsecond.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"hwappsecond/Preview Content\"";
 				DEVELOPMENT_TEAM = 7VAGZXD78P;

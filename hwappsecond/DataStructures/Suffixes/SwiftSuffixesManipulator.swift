@@ -10,6 +10,7 @@ open class SwiftSuffixesManipulator: SuffixesManipulator {
     var dataSource = SuffixesDataSource(source: "")
     var suffixes = [String: Int]()
     var numOfThreeLettersStringsToFind: Int = 10
+    var dbItems = [Item]()
     
     init() {
         retrieveFromDB()
@@ -21,6 +22,7 @@ open class SwiftSuffixesManipulator: SuffixesManipulator {
         let request = NSFetchRequest<NSFetchRequestResult>()
         request.entity = entityDescription
         let objects = try? context.fetch(request) as? [Item]
+        objects?.forEach { dbItems.append($0) }
         print("Fetched \(objects?.count ?? 0) objects")
         if let source = objects?.randomElement()?.content {
             let dataSource = SuffixesDataSource(source: source)
