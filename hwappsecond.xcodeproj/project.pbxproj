@@ -41,6 +41,8 @@
 		199C424125992CD00088CB26 /* SwiftSetManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C424025992CD00088CB26 /* SwiftSetManipulator.swift */; };
 		199C424525992D0E0088CB26 /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C424425992D0E0088CB26 /* StringGenerator.swift */; };
 		199C424925992D7D0088CB26 /* SwiftSuffixesManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C424825992D7D0088CB26 /* SwiftSuffixesManipulator.swift */; };
+		19A0DC2A25A08BDD009CFC92 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19A0DC2925A08BDD009CFC92 /* RealmSwift */; };
+		19A0DC2F25A08C22009CFC92 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 19A0DC2E25A08C22009CFC92 /* Toast */; };
 		19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */; };
 		19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */; };
 		19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */; };
@@ -187,8 +189,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19A0DC2A25A08BDD009CFC92 /* RealmSwift in Frameworks */,
 				193460792559382500567674 /* AsyncImageLoader in Frameworks */,
 				19FC6DA52558C0FF00FAA4D2 /* DummyApiNetworkClient in Frameworks */,
+				19A0DC2F25A08C22009CFC92 /* Toast in Frameworks */,
 				19FC6DCC2558D27300FAA4D2 /* CustomNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,6 +594,8 @@
 				19FC6DA42558C0FF00FAA4D2 /* DummyApiNetworkClient */,
 				19FC6DCB2558D27300FAA4D2 /* CustomNavigation */,
 				193460782559382500567674 /* AsyncImageLoader */,
+				19A0DC2925A08BDD009CFC92 /* RealmSwift */,
+				19A0DC2E25A08C22009CFC92 /* Toast */,
 			);
 			productName = hwappsecond;
 			productReference = 19FF6DC72518754E000FB80A /* hwappsecond.app */;
@@ -625,6 +631,8 @@
 				19FC6DA32558C0FF00FAA4D2 /* XCRemoteSwiftPackageReference "DummyApiNetworkClient" */,
 				19FC6DCA2558D27300FAA4D2 /* XCRemoteSwiftPackageReference "CustomNavigation" */,
 				193460772559382500567674 /* XCRemoteSwiftPackageReference "AsyncImageLoader" */,
+				19A0DC2825A08BDD009CFC92 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				19A0DC2D25A08C22009CFC92 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 19FF6DC82518754E000FB80A /* Products */;
 			projectDirPath = "";
@@ -1005,6 +1013,22 @@
 				kind = branch;
 			};
 		};
+		19A0DC2825A08BDD009CFC92 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.5.0;
+			};
+		};
+		19A0DC2D25A08C22009CFC92 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		19FC6DA32558C0FF00FAA4D2 /* XCRemoteSwiftPackageReference "DummyApiNetworkClient" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dartsyms/DummyApiNetworkClient.git";
@@ -1028,6 +1052,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 193460772559382500567674 /* XCRemoteSwiftPackageReference "AsyncImageLoader" */;
 			productName = AsyncImageLoader;
+		};
+		19A0DC2925A08BDD009CFC92 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19A0DC2825A08BDD009CFC92 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		19A0DC2E25A08C22009CFC92 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19A0DC2D25A08C22009CFC92 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		19FC6DA42558C0FF00FAA4D2 /* DummyApiNetworkClient */ = {
 			isa = XCSwiftPackageProductDependency;
