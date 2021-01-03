@@ -813,6 +813,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.it.kot.hwappsecond.ShareTextExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -835,6 +836,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.it.kot.hwappsecond.ShareTextExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -975,6 +977,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.it.kot.hwappsecond;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -999,6 +1002,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.it.kot.hwappsecond;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
