@@ -8,13 +8,13 @@ import DummyApiNetworkClient
 
 
 final class UserRowViewModel: ObservableObject {
-    @Published private(set) var user: User
+    @Published private(set) var user: CachedUser
     
-    init(user: User) {
+    init(user: CachedUser) {
         self.user = user
     }
     
     var fullName: String {
-        return "\(user.firstName ?? "John") \(user.lastName ?? "Dough")"
+        return user.name
     }
 }

@@ -42,7 +42,11 @@
 		199C424525992D0E0088CB26 /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C424425992D0E0088CB26 /* StringGenerator.swift */; };
 		199C424925992D7D0088CB26 /* SwiftSuffixesManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C424825992D7D0088CB26 /* SwiftSuffixesManipulator.swift */; };
 		19A0DC2A25A08BDD009CFC92 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19A0DC2925A08BDD009CFC92 /* RealmSwift */; };
-		19A0DC2F25A08C22009CFC92 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 19A0DC2E25A08C22009CFC92 /* Toast */; };
+		19A0DCA925A125DB009CFC92 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0DCA825A125DB009CFC92 /* RealmProvider.swift */; };
+		19A0DCAE25A12864009CFC92 /* CachedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0DCAD25A12864009CFC92 /* CachedPost.swift */; };
+		19A0DCB225A128CB009CFC92 /* CachedTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0DCB125A128CB009CFC92 /* CachedTag.swift */; };
+		19A0DCB625A12902009CFC92 /* CachedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0DCB525A12902009CFC92 /* CachedUser.swift */; };
+		19A0DCBA25A1294A009CFC92 /* CachedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0DCB925A1294A009CFC92 /* CachedLocation.swift */; };
 		19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */; };
 		19A250FA252BAEFC006E6F66 /* UserRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */; };
 		19A250FD252BB07E006E6F66 /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */; };
@@ -139,6 +143,11 @@
 		199C424025992CD00088CB26 /* SwiftSetManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSetManipulator.swift; sourceTree = "<group>"; };
 		199C424425992D0E0088CB26 /* StringGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringGenerator.swift; sourceTree = "<group>"; };
 		199C424825992D7D0088CB26 /* SwiftSuffixesManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSuffixesManipulator.swift; sourceTree = "<group>"; };
+		19A0DCA825A125DB009CFC92 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		19A0DCAD25A12864009CFC92 /* CachedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedPost.swift; sourceTree = "<group>"; };
+		19A0DCB125A128CB009CFC92 /* CachedTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedTag.swift; sourceTree = "<group>"; };
+		19A0DCB525A12902009CFC92 /* CachedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedUser.swift; sourceTree = "<group>"; };
+		19A0DCB925A1294A009CFC92 /* CachedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedLocation.swift; sourceTree = "<group>"; };
 		19A250F3252B4C18006E6F66 /* TagRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRowViewModel.swift; sourceTree = "<group>"; };
 		19A250F9252BAEFC006E6F66 /* UserRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowViewModel.swift; sourceTree = "<group>"; };
 		19A250FC252BB07E006E6F66 /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
@@ -192,7 +201,6 @@
 				19A0DC2A25A08BDD009CFC92 /* RealmSwift in Frameworks */,
 				193460792559382500567674 /* AsyncImageLoader in Frameworks */,
 				19FC6DA52558C0FF00FAA4D2 /* DummyApiNetworkClient in Frameworks */,
-				19A0DC2F25A08C22009CFC92 /* Toast in Frameworks */,
 				19FC6DCC2558D27300FAA4D2 /* CustomNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +338,26 @@
 				199C424425992D0E0088CB26 /* StringGenerator.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		19A0DCA725A1258F009CFC92 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				19A0DCAC25A1284B009CFC92 /* Models */,
+				19A0DCA825A125DB009CFC92 /* RealmProvider.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
+		19A0DCAC25A1284B009CFC92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				19A0DCAD25A12864009CFC92 /* CachedPost.swift */,
+				19A0DCB125A128CB009CFC92 /* CachedTag.swift */,
+				19A0DCB525A12902009CFC92 /* CachedUser.swift */,
+				19A0DCB925A1294A009CFC92 /* CachedLocation.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		19A251322533C7E2006E6F66 /* Posts */ = {
@@ -478,6 +506,7 @@
 		19FF6DC92518754E000FB80A /* hwappsecond */ = {
 			isa = PBXGroup;
 			children = (
+				19A0DCA725A1258F009CFC92 /* Caching */,
 				199C41D82598ED890088CB26 /* CoreDataStack */,
 				199C413D2597C9B20088CB26 /* DataStructures */,
 				19FF6E322518FAFA000FB80A /* Extensions */,
@@ -595,7 +624,6 @@
 				19FC6DCB2558D27300FAA4D2 /* CustomNavigation */,
 				193460782559382500567674 /* AsyncImageLoader */,
 				19A0DC2925A08BDD009CFC92 /* RealmSwift */,
-				19A0DC2E25A08C22009CFC92 /* Toast */,
 			);
 			productName = hwappsecond;
 			productReference = 19FF6DC72518754E000FB80A /* hwappsecond.app */;
@@ -632,7 +660,6 @@
 				19FC6DCA2558D27300FAA4D2 /* XCRemoteSwiftPackageReference "CustomNavigation" */,
 				193460772559382500567674 /* XCRemoteSwiftPackageReference "AsyncImageLoader" */,
 				19A0DC2825A08BDD009CFC92 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-				19A0DC2D25A08C22009CFC92 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 19FF6DC82518754E000FB80A /* Products */;
 			projectDirPath = "";
@@ -694,13 +721,16 @@
 				19FC6D7A255891AE00FAA4D2 /* ServiceLocator.swift in Sources */,
 				19A2511A25338EEE006E6F66 /* CircleImage.swift in Sources */,
 				199C421D259928CD0088CB26 /* DictionaryManipulator.swift in Sources */,
+				19A0DCA925A125DB009CFC92 /* RealmProvider.swift in Sources */,
 				199C414F2597DFE80088CB26 /* SuffixRowView.swift in Sources */,
 				19FC6D7D2558964600FAA4D2 /* TagService.swift in Sources */,
 				199C42192599289B0088CB26 /* ArrayManipulator.swift in Sources */,
 				19A2511D25338F38006E6F66 /* MapView.swift in Sources */,
 				19FF6E73251A1F62000FB80A /* TagsDataSource.swift in Sources */,
+				19A0DCB625A12902009CFC92 /* CachedUser.swift in Sources */,
 				19FF6E55251A1E2E000FB80A /* UsersListView.swift in Sources */,
 				19FF6E64251A1E97000FB80A /* TagRowView.swift in Sources */,
+				19A0DCAE25A12864009CFC92 /* CachedPost.swift in Sources */,
 				19A251272533AB4D006E6F66 /* CommentsRowView.swift in Sources */,
 				19FF6DCD2518754E000FB80A /* MainView.swift in Sources */,
 				19A251172533753B006E6F66 /* UserViewModel.swift in Sources */,
@@ -709,6 +739,7 @@
 				19FF6DCB2518754E000FB80A /* hwappsecondApp.swift in Sources */,
 				199C41472597CA8F0088CB26 /* SuffixesDataSource.swift in Sources */,
 				199C423D25992C590088CB26 /* SwiftDictionaryManipulator.swift in Sources */,
+				19A0DCBA25A1294A009CFC92 /* CachedLocation.swift in Sources */,
 				199C415B2597E7DC0088CB26 /* CustomSearchView.swift in Sources */,
 				19FF6E6D251A1F25000FB80A /* UsersDataSource.swift in Sources */,
 				19A250F4252B4C18006E6F66 /* TagRowViewModel.swift in Sources */,
@@ -730,6 +761,7 @@
 				199C4215259922300088CB26 /* JobScheduler.swift in Sources */,
 				199C421125991EAA0088CB26 /* JobQueue.swift in Sources */,
 				199C41532597E0290088CB26 /* SuffixRowViewModel.swift in Sources */,
+				19A0DCB225A128CB009CFC92 /* CachedTag.swift in Sources */,
 				19FC6D832558966600FAA4D2 /* UserService.swift in Sources */,
 				199C41DA2598EDA30088CB26 /* CustomPersistenceContainer.swift in Sources */,
 				19FF6E58251A1E3C000FB80A /* PostsListView.swift in Sources */,
@@ -1021,14 +1053,6 @@
 				minimumVersion = 10.5.0;
 			};
 		};
-		19A0DC2D25A08C22009CFC92 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scalessec/Toast-Swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
 		19FC6DA32558C0FF00FAA4D2 /* XCRemoteSwiftPackageReference "DummyApiNetworkClient" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dartsyms/DummyApiNetworkClient.git";
@@ -1057,11 +1081,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 19A0DC2825A08BDD009CFC92 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
-		};
-		19A0DC2E25A08C22009CFC92 /* Toast */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 19A0DC2D25A08C22009CFC92 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
-			productName = Toast;
 		};
 		19FC6DA42558C0FF00FAA4D2 /* DummyApiNetworkClient */ = {
 			isa = XCSwiftPackageProductDependency;

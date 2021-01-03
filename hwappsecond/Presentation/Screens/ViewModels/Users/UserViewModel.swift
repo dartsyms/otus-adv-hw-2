@@ -36,13 +36,14 @@ final class UserViewModel: ObservableObject {
         return "Pnone: \(userPhone)"
     }
     
-    func loadDetailsFor(_ id: String) {
+    func loadDetailsFor(_ id: String?) {
+        guard id != nil else { return }
         guard !isLoading else { return }
         self.isLoading = true
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.userRequest = self.userService.getUserDetails(userId: id, apiResponseQueue: DummyAPIConfig.apiResponseQueue)
+            self.userRequest = self.userService.getUserDetails(userId: id!, apiResponseQueue: DummyAPIConfig.apiResponseQueue)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { [weak self] _ in self?.onLoad() },
                     receiveOutput: { print($0) },

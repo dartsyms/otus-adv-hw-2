@@ -62,7 +62,7 @@ struct CardModifier: ViewModifier {
 
 struct UserRowView_Previews: PreviewProvider {
     static var previews: some View {
-        let user = User(id: "1", title: .dr, firstName: "John", lastName: "Dough", gender: .male, email: "someone@nowhere.net", location: .init(street: "5th Avenue", city: "New York", state: "NY", country: "USA", timezone: "-8UTC"), dateOfBirth: "08.10.1960", registerDate: "10.05.2020", phone: "555-555-555", picture: "https://randomuser.me/api/portraits/men/80.jpg")
+        let user = CachedUser(userId: "1", title: "Dr.", firstName: "John", lastName: "Dough", gender: "male", email: "someone@nowhere.net", location: .init(street: "5th Avenue", city: "New York", state: "NY", country: "USA", timezone: "-8UTC"), dateOfBirth: "08.10.1960", registerDate: "10.05.2020", phone: "555-555-555", picture: "https://randomuser.me/api/portraits/men/80.jpg")
         UserRowView(viewModel: UserRowViewModel(user: user))
     }
 }

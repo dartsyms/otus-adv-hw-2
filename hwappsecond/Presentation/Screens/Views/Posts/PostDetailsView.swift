@@ -11,7 +11,7 @@ import CustomNavigation
 import AsyncImageLoader
 
 struct PostDetailsView: View {
-    @State var post: Post
+    @State var post: CachedPost
     
     var body: some View {
         let url = URL(string: post.image ?? "https://img.dummyapi.io/photo-1590178534645-de019aa7255e.jpg")!

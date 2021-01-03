@@ -24,17 +24,17 @@ struct UsersListView: View {
     
     private var users: some View {
         List {
-            ForEach(Array(self.dataSource.users.enumerated()), id: \.element.id) { pair in
+            ForEach(self.dataSource.cachedUsers, id: \.userId) { user in
                 HStack {
-                    UserRowView(viewModel: UserRowViewModel(user: pair.element))
+                    UserRowView(viewModel: UserRowViewModel(user: user))
                 }
                 .onAppear {
-                    if self.dataSource.users.isLast(pair.element) {
-                        self.dataSource.load()
+                    if self.dataSource.cachedUsers.isLast(user) {
+                        self.dataSource.loadCached()
                     }
                 }
                 
-                if self.dataSource.isLoading && self.dataSource.users.isLast(pair.element) {
+                if self.dataSource.isLoading && self.dataSource.cachedUsers.isLast(user) {
                     ProgressView()
                 }
             }

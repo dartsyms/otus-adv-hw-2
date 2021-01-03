@@ -12,10 +12,10 @@ import AsyncImageLoader
 struct UserDetailsView: View {
     @ObservedObject private var viewModel = UserViewModel()
     
-    var person: User
+    var person: CachedUser
     var openedFromPost: Bool = false
     
-    init(person: User, fromPost: Bool = false) {
+    init(person: CachedUser, fromPost: Bool = false) {
         self.person = person
         self.openedFromPost = fromPost
     }
@@ -68,16 +68,14 @@ struct UserDetailsView: View {
         }
         
         .onAppear {
-            if let id = person.id {
-                self.viewModel.loadDetailsFor(id)
-            }
+            self.viewModel.loadDetailsFor(person.userId)
         }
     }
 }
 
 struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let user = User(id: "1", title: .dr, firstName: "John", lastName: "Dough", gender: .male, email: "", location: .init(street: "5th Avenue", city: "New York", state: "NY", country: "USA", timezone: "-8UTC"), dateOfBirth: "08.10.1960", registerDate: "10.05.2020", phone: "555-555-555", picture: "")
+        let user = CachedUser(userId: "1", title: "Dr.", firstName: "John", lastName: "Dough", gender: "male", email: "", location: .init(street: "5th Avenue", city: "New York", state: "NY", country: "USA", timezone: "-8UTC"), dateOfBirth: "08.10.1960", registerDate: "10.05.2020", phone: "555-555-555", picture: "")
         UserDetailsView(person: user)
     }
 }

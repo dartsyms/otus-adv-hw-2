@@ -19,17 +19,17 @@ struct PostsScreen: View {
     var body: some View {
         VStack {
             List {
-                ForEach(Array(self.dataSource.posts.enumerated()), id: \.element.id) { pair in
+                ForEach(self.dataSource.cachedPosts, id: \.postId) { post in
                     HStack {
-                        PostRowView(viewModel: PostRowViewModel(post: pair.element))
+                        PostRowView(viewModel: PostRowViewModel(post: post))
                     }
                     .onAppear {
-                        if self.dataSource.posts.isLast(pair.element) {
-                            self.dataSource.load()
+                        if self.dataSource.cachedPosts.isLast(post) {
+                            self.dataSource.loadCached()
                         }
                     }
                     
-                    if self.dataSource.isLoading && self.dataSource.posts.isLast(pair.element) {
+                    if self.dataSource.isLoading && self.dataSource.cachedPosts.isLast(post) {
                         ProgressView()
                     }
                 }

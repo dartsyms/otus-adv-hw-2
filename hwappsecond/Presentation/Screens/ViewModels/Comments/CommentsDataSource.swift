@@ -13,21 +13,22 @@ final class CommentsDataSource: ObservableObject {
     @Published private(set) var isLoading = false
     @Published private(set) var page: Int = 0
     
-    var post: Post
+    var post: CachedPost
     
     var request: AnyCancellable?
     
-    init(post: Post) {
+    init(post: CachedPost) {
         self.post = post
     }
     
-    func loadCommentsFor(_ postId: String) {
+    func loadCommentsFor(_ postId: String?) {
+        guard postId != nil else { return }
         guard !isLoading else { return }
         self.isLoading = true
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            self.request = self.commentService.getCommentsForPost(postId: postId, page: self.page, limit: 20, apiResponseQueue: DummyAPIConfig.apiResponseQueue)
+            self.request = self.commentService.getCommentsForPost(postId: postId!, page: self.page, limit: 20, apiResponseQueue: DummyAPIConfig.apiResponseQueue)
                 .receive(on: RunLoop.main)
                 .handleEvents(receiveSubscription: { subscription in
                     print("Subscription: \(subscription.combineIdentifier)")
