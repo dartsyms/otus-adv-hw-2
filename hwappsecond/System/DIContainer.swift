@@ -8,7 +8,7 @@ import DummyApiNetworkClient
 
 class DIContainer {
     static func makeDefault() {
-        DummyAPIConfig.customHeaders.updateValue("5ff0e7ce17f662709c101f2d", forKey: "app-id")
+        DummyAPIConfig.customHeaders.updateValue("5f7c2dcc582b4b0e578d238d", forKey: "app-id")
         Resolver.shared.register(TagServiceImpl() as TagService)
         Resolver.shared.register(PostServiceImpl() as PostService)
         Resolver.shared.register(UserServiceImpl() as UserService)
