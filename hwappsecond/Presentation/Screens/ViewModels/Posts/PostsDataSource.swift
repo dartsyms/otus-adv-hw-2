@@ -47,8 +47,8 @@ final class PostsDataSource: ObservableObject {
                                 self.cachedPosts.append(item)
                             }
                         }
-                    case .update(let upds, _, _, _):
-                        Array(upds).forEach { item in
+                    case .update(_, _, _, _):
+                        Array(CachedPost.all(in: realm)).forEach { item in
                             if !self.cachedPosts.map({ $0.postId }).contains(item.postId) {
                                 self.cachedPosts.append(item)
                             }

@@ -47,8 +47,8 @@ final class UsersDataSource: ObservableObject {
                                 self.cachedUsers.append(item)
                             }
                         }
-                    case .update(let upds, _, _, _):
-                        Array(upds).forEach { item in
+                    case .update(_, _, _, _):
+                        Array(CachedUser.all(in: realm)).forEach { item in
                             if !self.cachedUsers.map({ $0.userId }).contains(item.userId) {
                                 self.cachedUsers.append(item)
                             }

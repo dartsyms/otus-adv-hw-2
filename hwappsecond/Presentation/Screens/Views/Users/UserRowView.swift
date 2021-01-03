@@ -44,7 +44,7 @@ struct UserRowView: View {
                 Spacer()
             }
             .frame(maxWidth: .infinity, alignment: .center)
-            .background(Color.white)
+            .background(Color(.systemBackground))
             .modifier(CardModifier())
             .padding(.all, 1)
         }
